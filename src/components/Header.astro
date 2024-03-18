@@ -2,26 +2,31 @@
 import arrow from "../../public/arrow.svg";
 ---
 
-<header>
-	<section class="mt-10 flex flex-col gap-8">
+<header class="flex flex-col gap-16 md:flex-row md:gap-20 pt-10">
+	<section class="flex flex-col gap-8 justify-center">
 		<div class="flex flex-col gap-3">
-			<h1 class="text-5xl font-bebas text-white">Hola, soy <br /> Ricardo Gonzalez.</h1>
-			<p class="text-subtext font-manrope">
+			<h1 class="text-5xl font-bebas text-white xl:text-8xl">Hola, soy <br /> Ricardo Gonzalez.</h1>
+			<p class="text-subtext font-manrope lg:text-lg">
 				Desarrollador Full Stack MERN, aprendiendo Python. Apasionado por crear sitios web accesibles y fáciles de usar.
 			</p>
 		</div>
 		<div class="flex gap-4">
 			<button class="font-manrope flex items-center font-bold bg-primary rounded-full p-1 pl-4 gap-3 text-sm"
 				><p>CONTACTAME</p>
-				<div class="w-10 h-10 rounded-full flex items-center justify-center bg-black">
+				<div
+					class="w-10 h-10 rounded-full flex items-center justify-center hover:rotate-[360deg] duration-500 ease-in-out bg-black">
 					<img src="/arrow.svg" alt="" />
 				</div></button
 			>
-			<button class="w-12 h-12 flex items-center justify-center bg-[#222222] rounded-full"><img src="/in.svg" alt="" /></button>
-			<button class="w-12 h-12 flex items-center justify-center bg-[#222222] rounded-full"
+			<button
+				class="w-12 h-12 flex items-center justify-center bg-[#222222] rounded-full hover:rotate-[360deg] border-2 border-[#222222] hover:border-primary duration-500 ease-in-out"
+				><img src="/in.svg" alt="" /></button
+			>
+			<button
+				class="w-12 h-12 flex items-center justify-center bg-[#222222] rounded-full hover:rotate-[360deg] border-2 border-[#222222] hover:border-primary duration-500 ease-in-out"
 				><img src="/github.svg" alt="" /></button
 			>
 		</div>
 	</section>
-	<section></section>
+	<section class="mx-auto max-w-80 sm:max-w-[400px] md:max-w-[600px]"><img src="/profile.png" alt="" /></section>
 </header>
