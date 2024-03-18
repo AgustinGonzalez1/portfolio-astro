@@ -86,7 +86,7 @@
 		},
 	];
 
-	const $projects = document.querySelector("#projects");
+	const $projects = document.querySelector("#projects") as HTMLElement;
 
 	arrProjects.forEach((project) => {
 		const { title, description, link, img, year, role } = project;
