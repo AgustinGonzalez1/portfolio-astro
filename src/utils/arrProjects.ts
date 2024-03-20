@@ -2,15 +2,6 @@ import { type Project } from "../types/projects";
 
 export const arrProjects: Project[] = [
   {
-    title: "Proyecto Final de Desarrollo Web",
-    description:
-      "Mi introducción al desarrollo web comenzó con éxito al crear una página web destacada en mi curso, lo que me llevó al top 10 de mi clase y me inspiró a seguir explorando este campo.",
-    link: "https://guarida-gamer.netlify.app/",
-    img: "/imgProjects/guaridaGamer.jpg",
-    year: 2023,
-    role: "Frontend",
-  },
-  {
     title: "Proyecto Final de JavaScript 1/2",
     description:
       "Mi proyecto final se centró en JavaScript, donde logré estar entre los diez mejores y consolidé mi pasión por este lenguaje. Creé un sitio eCommerce interactivo que permitía a los usuarios explorar y gestionar su carrito de compras. Mi amor por JavaScript se reflejó en cada línea de código, marcando el inicio de mi emocionante viaje en el desarrollo web.",

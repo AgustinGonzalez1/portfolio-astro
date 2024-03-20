@@ -1,0 +1,37 @@
+<aside class="flex flex-col lg:flex-row justify-between gap-4">
+	<div>
+		<h2 class="text-4xl xl:text-7xl font-bebas text-white">Sobre mí</h2>
+	</div>
+	<div class="flex flex-col max-w-[600px] gap-8">
+		<div class="flex flex-col gap-4">
+			<h4 class="text-white text-2xl font-manrope">
+				Me dedico al desarrollo fullstack con MERN y estoy en proceso de aprender Python con Django.
+			</h4>
+			<p class="text-subtext font-manrope">
+				Estudiante de Python en CoderHouse. Estudiante de la tecnicatura superior en programación en Teclab. Experiencia en
+				desarrollo de webs dinámicas y trabajando con grupos de desarrolladores y diseñadores con metodologías ágiles. A futuro me
+				gustaría terminar la tecnicatura y seguir mis estudios en Siglo XXI - Ing. en Software.
+			</p>
+		</div>
+		<div>
+			<a href="#" class="text-primary font-manrope text-primary-hover w-fit block">Más sobre mí</a>
+		</div>
+	</div>
+</aside>
+
+<style>
+	.text-primary-hover::after {
+		content: "";
+		display: block;
+		width: 0px;
+		height: 1px;
+		top: 0;
+		background-color: currentColor;
+		margin-top: 1px;
+		transition: all 0.2s ease-in-out;
+	}
+
+	.text-primary-hover:hover::after {
+		width: 100%;
+	}
+</style>
