@@ -2,13 +2,13 @@
 interface Props {
 	title: string;
 	description: string;
-	link: string;
 	img: string;
+	link: string;
 	year: number;
 	role: string;
 }
 
-const { title, description, link, img, year, role }: Props = Astro.props;
+const { title, description, img, link, year, role } = Astro.props;
 ---
 
 <article class="flex flex-col gap-10 xl:grid xl:grid-cols-2">
@@ -35,7 +35,7 @@ const { title, description, link, img, year, role }: Props = Astro.props;
 			</div>
 		</div>
 		<div class="flex gap-1 border-b-2 w-fit border-primary hover:border-subtext duration-300 ease-in-out">
-			<a href={link} class="text-subtext font-manrope">VISITAR</a>
+			<a href={link} class="text-subtext font-manrope" rel="noopener noreferrer" target="_blank">VISITAR</a>
 			<img src="/arrow.svg" alt="" />
 		</div>
 	</div>
