@@ -1,4 +1,9 @@
-<aside class="flex flex-col lg:flex-row justify-between gap-4">
+---
+const { pathname } = Astro.url;
+import ContactHeader from "./ContactHeader.astro";
+---
+
+<aside id="about" class="flex flex-col lg:flex-row justify-between gap-4">
 	<div>
 		<h2 class="text-4xl xl:text-7xl font-bebas text-white">Sobre mí</h2>
 	</div>
@@ -13,25 +18,16 @@
 				gustaría terminar la tecnicatura y seguir mis estudios en Siglo XXI - Ing. en Software.
 			</p>
 		</div>
-		<div>
-			<a href="/about" class="text-primary font-manrope text-primary-hover w-fit block">Más sobre mí</a>
-		</div>
+		{
+			pathname === "/" ? (
+				<div>
+					<a href="/about" class="text-primary font-manrope text-primary-hover w-fit block">
+						Más sobre mí
+					</a>
+				</div>
+			) : (
+				<ContactHeader />
+			)
+		}
 	</div>
 </aside>
-
-<style is:global>
-	.text-primary-hover::after {
-		content: "";
-		display: block;
-		width: 0px;
-		height: 1px;
-		top: 0;
-		background-color: #d3e97a;
-		margin-top: 1px;
-		transition: all 0.2s ease-in-out;
-	}
-
-	.text-primary-hover:hover::after {
-		width: 100%;
-	}
-</style>

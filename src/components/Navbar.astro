@@ -1,21 +1,44 @@
 ---
-
+const { pathname } = Astro.url;
 ---
 
 <nav class="flex justify-between items-center py-7 bg-[#0a0a0a]">
 	<div>
-		<a href="/"><h2 class="text-xl xl:text-3xl text-subtext font-bebas">RICARDO GONZALEZ</h2></a>
+		<a href="/"
+			><h2 class="text-xl xl:text-3xl text-subtext font-bebas duration-300 hover:text-primary ease-in-out">
+				RICARDO GONZALEZ
+			</h2></a
+		>
 	</div>
 
-	<ul
-		id="ul"
-		class="text-sm bg-[#0a0a0a] gap-8 flex flex-col items-center justify-center sm:flex-row w-full sm:w-fit text-subtext font-manrope absolute top-[86px] h-0 duration-300 ease-out sm:h-fit overflow-hidden left-[50%] sm:sticky translate-x-[-50%] sm:translate-x-0">
-		<li class="hover:text-white duration-200 ease-in-out"><a href="#">Proyectos</a></li>
-		<li class="hover:text-white duration-200 ease-in-out"><a href="#">Sobre mí</a></li>
-		<li class="hover:text-white duration-200 ease-in-out"><a href="#">Contacto</a></li>
-	</ul>
-
-	<div class="sm:hidden block"><i class="icon-menu"><span></span></i></div>
+	{
+		pathname === "/" ? (
+			<>
+				<ul
+					id="ul"
+					class="text-sm bg-[#0a0a0a] gap-8 flex flex-col items-center justify-center sm:flex-row w-full sm:w-fit text-subtext font-manrope absolute top-[86px] h-0 duration-300 ease-out sm:h-fit overflow-hidden left-[50%] sm:sticky translate-x-[-50%] sm:translate-x-0">
+					<li class="hover:text-white duration-200 ease-in-out">
+						<a href="#projects">Proyectos</a>
+					</li>
+					<li class="hover:text-white duration-200 ease-in-out">
+						<a href="#about">Sobre mí</a>
+					</li>
+					<li class="hover:text-white duration-200 ease-in-out">
+						<a href="#contact">Contacto</a>
+					</li>
+				</ul>
+				<div class="sm:hidden block">
+					<i class="icon-menu">
+						<span />
+					</i>
+				</div>
+			</>
+		) : (
+			<a href="/" class="text-xl xl:text-3xl text-subtext font-bebas hover:text-primary duration-300 ease-in-out">
+				Volver
+			</a>
+		)
+	}
 </nav>
 
 <script>
