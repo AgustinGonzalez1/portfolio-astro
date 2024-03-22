@@ -1,9 +1,25 @@
+---
+const { pathname } = Astro.url;
+---
+
 <div class="flex gap-4">
-	<a
-		href="#contact"
-		class="font-manrope flex items-center font-bold bg-primary border-2 border-primary hover:bg-transparent hover:text-white duration-500 rounded-full p-1 px-4 gap-3 text-sm"
-		><p>CONTACTAME</p>
-	</a>
+	{
+		pathname === "/" ? (
+			<a
+				href="#contact"
+				class="font-manrope flex items-center font-bold bg-primary border-2 border-primary hover:bg-transparent hover:text-white duration-500 rounded-full p-1 px-4 gap-3 text-sm">
+				<p>CONTACTAME</p>
+			</a>
+		) : (
+			<a
+				href="/ricardo-agustin-gonzalez-cv.pdf"
+				target="_blank"
+				rel="noopener noreferrer"
+				class="font-manrope flex items-center font-bold bg-primary border-2 border-primary hover:bg-transparent hover:text-white duration-500 rounded-full p-1 px-4 gap-3 text-sm">
+				<p>DESCARGAR CV</p>
+			</a>
+		)
+	}
 	<a
 		href="https://www.linkedin.com/in/ricardoagustingonzalez/"
 		target="_blank"
