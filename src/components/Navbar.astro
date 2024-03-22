@@ -28,7 +28,7 @@ const { pathname } = Astro.url;
 					</li>
 				</ul>
 				<div class="sm:hidden block">
-					<i class="icon-menu">
+					<i class="icon-menu" id="menu">
 						<span />
 					</i>
 				</div>
@@ -42,21 +42,23 @@ const { pathname } = Astro.url;
 </nav>
 
 <script>
-	const $menu = document.querySelector(".icon-menu") as HTMLElement;
+	const $menu = document.querySelector("#menu") as HTMLElement;
 	const $ul = document.querySelector("#ul") as HTMLElement;
 	const $li = document.querySelectorAll("#ul li") as NodeListOf<HTMLElement>;
 
-	$menu.addEventListener("click", (): void => {
-		$menu.classList.toggle("icon-closed");
-		$ul.classList.toggle("h-[200px]");
-	});
-
-	$li.forEach((li) => {
-		li.addEventListener("click", (): void => {
-			$menu.classList.remove("icon-closed");
+	if ($menu) {
+		$menu.addEventListener("click", (): void => {
+			$menu.classList.toggle("icon-closed");
 			$ul.classList.toggle("h-[200px]");
 		});
-	});
+
+		$li.forEach((li) => {
+			li.addEventListener("click", (): void => {
+				$menu.classList.remove("icon-closed");
+				$ul.classList.toggle("h-[200px]");
+			});
+		});
+	}
 </script>
 
 <style>
