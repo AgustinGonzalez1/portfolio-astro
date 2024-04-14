@@ -6,7 +6,9 @@ import Connect from "../components/Connect.astro";
 ---
 
 <Layout title="ABOUT | RAG">
-	<AboutMe />
+	<div transition:name="about">
+		<AboutMe />
+	</div>
 	<div class="w-full h-[1px] bg-[#484848] my-16 md:my-20"></div>
 	<Skills />
 	<div class="w-full h-[1px] bg-[#484848] my-16 md:my-20"></div>
