@@ -49,4 +49,13 @@ export const arrSkills: Skills[] = [
   {
     name: "ExpressJS",
   },
+  {
+    name: "MongoDB",
+  },
+  {
+    name: "Python",
+  },
+  {
+    name: "Django",
+  },
 ];
