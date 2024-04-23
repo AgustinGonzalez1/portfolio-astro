@@ -42,23 +42,35 @@ const { pathname } = Astro.url;
 </nav>
 
 <script>
+	import { sideMenuOpen } from "../store";
+
 	const $menu = document.querySelector("#menu") as HTMLElement;
 	const $ul = document.querySelector("#ul") as HTMLElement;
 	const $li = document.querySelectorAll("#ul li") as NodeListOf<HTMLElement>;
 
-	if ($menu) {
-		$menu.addEventListener("click", (): void => {
-			$menu.classList.toggle("icon-closed");
-			$ul.classList.toggle("h-[200px]");
-		});
+	console.log(sideMenuOpen);
 
-		$li.forEach((li) => {
-			li.addEventListener("click", (): void => {
-				$menu.classList.remove("icon-closed");
-				$ul.classList.toggle("h-[200px]");
-			});
-		});
-	}
+	const open = (): void => {
+		sideMenuOpen.set(!sideMenuOpen.value);
+	};
+
+	$menu?.addEventListener("click", open);
+
+	$li?.forEach((li) => {
+		li.addEventListener("click", open);
+	});
+
+	sideMenuOpen.subscribe((value) => {
+		if (value) {
+			$menu.classList.add("icon-closed");
+			$ul.classList.add("h-[200px]");
+		} else {
+			$menu.classList.remove("icon-closed");
+			$ul.classList.remove("h-[200px]");
+		}
+	});
+
+	console.log(sideMenuOpen.off());
 </script>
 
 <style>
