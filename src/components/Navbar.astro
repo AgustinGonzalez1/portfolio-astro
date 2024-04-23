@@ -14,7 +14,7 @@ const { pathname } = Astro.url;
 
 		{
 			pathname === "/" ? (
-				<>
+				<button>
 					<ul
 						id="ul"
 						class="text-sm bg-[#0a0a0a] gap-8 flex flex-col items-center justify-center sm:flex-row w-full sm:w-fit text-subtext font-manrope absolute top-[86px] h-0 duration-300 ease-out sm:h-fit overflow-hidden left-[50%] sm:sticky translate-x-[-50%] sm:translate-x-0">
@@ -29,11 +29,11 @@ const { pathname } = Astro.url;
 						</li>
 					</ul>
 					<div class="sm:hidden block">
-						<i class="icon-menu" id="menu">
+						<button class="icon-menu" id="menu">
 							<span />
-						</i>
+						</button>
 					</div>
-				</>
+				</button>
 			) : (
 				<a href="/" class="text-xl xl:text-3xl text-subtext font-bebas hover:text-primary duration-300 ease-in-out">
 					Volver
@@ -42,25 +42,6 @@ const { pathname } = Astro.url;
 		}
 	</div>
 </nav>
-
-<script>
-	const $menu = document?.querySelector("#menu") as HTMLElement;
-	const $ul = document.querySelector("#ul") as HTMLElement;
-	const $li = document.querySelectorAll("#ul li") as NodeListOf<HTMLElement>;
-
-	if ($menu) {
-		$menu.addEventListener("click", (): void => {
-			$menu.classList.toggle("icon-closed");
-			$ul.classList.toggle("h-[200px]");
-		});
-		$li.forEach((li) => {
-			li.addEventListener("click", (): void => {
-				$menu.classList.remove("icon-closed");
-				$ul.classList.toggle("h-[200px]");
-			});
-		});
-	}
-</script>
 
 <style>
 	.icon-menu {
@@ -151,3 +132,28 @@ const { pathname } = Astro.url;
 		opacity: 1;
 	}
 </style>
+
+<script>
+	document.addEventListener(
+		"astro:page-load",
+		() => {
+			const $menu = document?.querySelector("#menu") as HTMLElement;
+			const $ul = document.querySelector("#ul") as HTMLElement;
+			const $li = document.querySelectorAll("#ul li") as NodeListOf<HTMLElement>;
+
+			if ($menu) {
+				$menu.addEventListener("click", (): void => {
+					$menu.classList.toggle("icon-closed");
+					$ul.classList.toggle("h-[200px]");
+				});
+				$li.forEach((li) => {
+					li.addEventListener("click", (): void => {
+						$menu.classList.remove("icon-closed");
+						$ul.classList.toggle("h-[200px]");
+					});
+				});
+			}
+		},
+		{ once: false }
+	);
+</script>
