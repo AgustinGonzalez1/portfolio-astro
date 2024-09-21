@@ -9,8 +9,8 @@ export default function Header() {
       <section className="flex flex-col gap-8 justify-center">
         <div className="flex flex-col gap-3">
           <motion.h1
-            initial={{ x: -100, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
             transition={{ duration: 0.5, ease: "easeInOut" }}
             viewport={{ once: true }}
             className="text-5xl font-bebas text-white xl:text-8xl"
@@ -18,8 +18,8 @@ export default function Header() {
             Hola, soy <br /> Ricardo Gonzalez.
           </motion.h1>
           <motion.p
-            initial={{ x: -100, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
             transition={{ duration: 0.5, ease: "easeInOut", delay: 0.1 }}
             viewport={{ once: true }}
             className="text-subtext font-manrope lg:text-lg"
@@ -30,8 +30,8 @@ export default function Header() {
           </motion.p>
         </div>
         <motion.div
-          initial={{ x: -100, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 1 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           transition={{ duration: 0.5, ease: "easeInOut", delay: 0.2 }}
           viewport={{ once: true }}
           className="flex gap-4"
@@ -63,8 +63,8 @@ export default function Header() {
       </section>
       <section className="mx-auto max-w-80 sm:max-w-[400px] md:max-w-[600px]">
         <motion.img
-          initial={{ x: 100, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 1 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           transition={{ duration: 0.5, ease: "easeInOut", delay: 0.3 }}
           viewport={{ once: true }}
           src="/profile.png"
