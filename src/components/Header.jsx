@@ -22,11 +22,11 @@ export default function Header() {
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.5, ease: "easeInOut", delay: 0.1 }}
             viewport={{ once: true }}
-            className="text-subtext font-manrope lg:text-lg"
+            className="text-subtext font-manrope lg:text-lg w-9/12"
           >
-            Docente Front-End en Play Code Latam. Desarrollador Full Stack PERN
-            en ByDerm. Apasionado por crear sitios web accesibles y fáciles de
-            usar.
+            Docente Front-End y de videojuegos en Play Code Latam. Desarrollador
+            Full Stack en Novigo Technology. Apasionado por crear sitios web
+            accesibles y fáciles de usar.
           </motion.p>
         </div>
         <motion.div

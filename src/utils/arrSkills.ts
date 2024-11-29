@@ -8,7 +8,7 @@ export const arrSkills: Skills[] = [
     name: "CSS",
   },
   {
-    name: "TailwindCSS",
+    name: "Tailwind",
   },
   {
     name: "Bootstrap",
@@ -57,5 +57,20 @@ export const arrSkills: Skills[] = [
   },
   {
     name: "Django",
+  },
+  {
+    name: "Linux",
+  },
+  {
+    name: "Frappe",
+  },
+  {
+    name: "SQL",
+  },
+  {
+    name: "Vue",
+  },
+  {
+    name: "MariaDB",
   },
 ];
