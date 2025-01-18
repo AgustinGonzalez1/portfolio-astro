@@ -1,9 +1,6 @@
-import { useRef } from "react";
 import { motion } from "framer-motion";
 
 export default function Header() {
-  const motionRef = useRef(null);
-
   return (
     <header className="flex flex-col gap-16 md:flex-row md:gap-20 pt-10 overflow-hidden">
       <section className="flex flex-col gap-8 justify-center">
