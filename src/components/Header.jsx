@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 export default function Header() {
   return (
-    <header className="flex flex-col gap-16 md:flex-row md:gap-20 pt-10 overflow-hidden">
+    <header className="flex flex-col gap-16 md:flex-row md:gap-20 overflow-hidden h-screen justify-center items-center pb-[92px]">
       <section className="flex flex-col gap-8 justify-center">
         <div className="flex flex-col gap-3">
           <motion.h1
@@ -58,7 +58,7 @@ export default function Header() {
           </a>
         </motion.div>
       </section>
-      <section className="mx-auto max-w-80 sm:max-w-[400px] md:max-w-[600px]">
+      <section className="mx-auto max-w-80 sm:max-w-[400px] md:max-w-[600px] flex justify-center items-center">
         <motion.img
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
