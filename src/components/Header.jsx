@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 export default function Header() {
   return (
-    <header className="flex flex-col gap-16 md:flex-row md:gap-20 overflow-hidden h-screen justify-center items-center pb-[92px]">
+    <header className="flex flex-col gap-8 md:flex-row md:gap-20 overflow-hidden h-screen justify-center items-center">
       <section className="flex flex-col gap-8 justify-center items-center md:items-start">
         <div className="flex flex-col gap-3 justify-center items-center md:items-start">
           <motion.h1
@@ -10,7 +10,7 @@ export default function Header() {
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.5, ease: "easeInOut" }}
             viewport={{ once: true }}
-            className="text-5xl font-bebas text-white xl:text-8xl text-center md:text-left"
+            className="text-4xl font-bebas text-white xl:text-8xl text-center md:text-left"
           >
             Hola, soy Ricardo Gonzalez.
           </motion.h1>
@@ -21,9 +21,7 @@ export default function Header() {
             viewport={{ once: true }}
             className="text-subtext font-manrope lg:text-lg w-9/12 text-center md:text-left"
           >
-            Docente Front-End y de videojuegos en Play Code Latam. Desarrollador
-            Full Stack en Novigo Technology. Apasionado por crear sitios web
-            accesibles y fáciles de usar.
+            Docente de Front-End y videojuegos en Play Code Latam • Full Stack Developer en Novigo Technology • Apasionado por diseñar experiencias web accesibles e intuitivas.
           </motion.p>
         </div>
         <motion.div
