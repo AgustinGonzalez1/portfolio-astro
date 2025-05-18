@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 export default function Header() {
   return (
-    <header className="flex flex-col gap-16 md:flex-row md:gap-20 overflow-hidden h-[100dvh] justify-center items-center pb-[92px]">
+    <header className="flex flex-col gap-16 md:flex-row md:gap-20 overflow-hidden h-screen justify-center items-center pb-[92px]">
       <section className="flex flex-col gap-8 justify-center items-center md:items-start">
         <div className="flex flex-col gap-3 justify-center items-center md:items-start">
           <motion.h1
@@ -10,7 +10,7 @@ export default function Header() {
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.5, ease: "easeInOut" }}
             viewport={{ once: true }}
-            className="text-5xl font-bebas text-white xl:text-8xl text-center"
+            className="text-5xl font-bebas text-white xl:text-8xl text-center md:text-left"
           >
             Hola, soy Ricardo Gonzalez.
           </motion.h1>
@@ -66,6 +66,7 @@ export default function Header() {
           viewport={{ once: true }}
           src="/profile.png"
           alt=""
+          className="rounded-full w-60 sm:w-[300px] md:w-[600px] h-auto object-cover border-2 border-primary"
         />
       </section>
     </header>
