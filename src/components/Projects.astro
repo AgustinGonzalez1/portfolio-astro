@@ -4,12 +4,16 @@ import CardProject from "./CardProject.astro";
 import { type Project } from "../types/projects.ts";
 ---
 
-<main class="flex flex-col gap-16 md:gap-20">
+<main class="flex flex-col gap-16 md:gap-20" id="projects">
 	<section>
-		<h2 class="text-4xl xl:text-7xl font-bebas text-white">Proyectos destacados</h2>
-		<p class="text-subtext font-manrope">Estos son algunos de los proyectos que he creado a lo largo de mi carrera.</p>
+		<h2 class="text-4xl xl:text-7xl font-bebas text-white">
+			Proyectos destacados
+		</h2>
+		<p class="text-subtext font-manrope">
+			Estos son algunos de los proyectos que he creado a lo largo de mi carrera.
+		</p>
 	</section>
-	<section id="projects" class="flex flex-col gap-28">
+	<section class="flex flex-col gap-28">
 		{
 			arrProjects.map((project: Project) => (
 				<CardProject

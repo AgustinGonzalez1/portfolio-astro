@@ -1,0 +1,27 @@
+---
+import { arrContributions } from "../utils/arrContributions";
+import { type Contribution } from "../types/contributions.ts";
+import CardContributions from "./CardContributions.astro";
+---
+
+<main class="flex flex-col gap-16 md:gap-20" id="contributions">
+  <section>
+    <h2 class="text-4xl xl:text-7xl font-bebas text-white">Mejores Aportes</h2>
+    <p class="text-subtext font-manrope">
+      Estos son algunos de los mejores aportes que he realizado a lo largo de mi
+      carrera profesional como full stack
+    </p>
+  </section>
+  <section class="flex flex-col gap-28">
+    {
+      arrContributions.map((project: Contribution) => (
+        <CardContributions
+          title={project.title}
+          description={project.description}
+          img={project.img}
+          link={project.link}
+        />
+      ))
+    }
+  </section>
+</main>

@@ -6,7 +6,9 @@ const { pathname } = Astro.url;
 	<div class="flex justify-between">
 		<div>
 			<a href="/"
-				><h2 class="text-xl xl:text-3xl text-subtext font-bebas duration-300 hover:text-primary ease-in-out">
+				><h2
+					class="text-xl xl:text-3xl text-subtext font-bebas duration-300 hover:text-primary ease-in-out"
+				>
 					RICARDO GONZALEZ
 				</h2></a
 			>
@@ -17,7 +19,11 @@ const { pathname } = Astro.url;
 				<button>
 					<ul
 						id="ul"
-						class="text-sm bg-[#0a0a0a] gap-8 flex flex-col items-center justify-center sm:flex-row w-full sm:w-fit text-subtext font-manrope absolute top-[86px] h-0 duration-300 ease-out sm:h-fit overflow-hidden left-[50%] sm:sticky translate-x-[-50%] sm:translate-x-0">
+						class="text-sm bg-[#0a0a0a] gap-8 flex flex-col items-center justify-center sm:flex-row w-full sm:w-fit text-subtext font-manrope absolute top-[86px] h-0 duration-300 ease-out sm:h-fit overflow-hidden left-[50%] sm:sticky translate-x-[-50%] sm:translate-x-0"
+					>
+						<li class="hover:text-white duration-200 ease-in-out">
+							<a href="#contributions">Aportes</a>
+						</li>
 						<li class="hover:text-white duration-200 ease-in-out">
 							<a href="#projects">Proyectos</a>
 						</li>
@@ -35,7 +41,10 @@ const { pathname } = Astro.url;
 					</div>
 				</button>
 			) : (
-				<a href="/" class="text-xl xl:text-3xl text-subtext font-bebas hover:text-primary duration-300 ease-in-out">
+				<a
+					href="/"
+					class="text-xl xl:text-3xl text-subtext font-bebas hover:text-primary duration-300 ease-in-out"
+				>
 					Volver
 				</a>
 			)
@@ -139,7 +148,9 @@ const { pathname } = Astro.url;
 		() => {
 			const $menu = document?.querySelector("#menu") as HTMLElement;
 			const $ul = document.querySelector("#ul") as HTMLElement;
-			const $li = document.querySelectorAll("#ul li") as NodeListOf<HTMLElement>;
+			const $li = document.querySelectorAll(
+				"#ul li",
+			) as NodeListOf<HTMLElement>;
 
 			if ($menu) {
 				$menu.addEventListener("click", (): void => {
@@ -154,6 +165,6 @@ const { pathname } = Astro.url;
 				});
 			}
 		},
-		{ once: false }
+		{ once: false },
 	);
 </script>
