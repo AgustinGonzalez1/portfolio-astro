@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 export default function Header() {
   return (
-    <header className="flex flex-col gap-16 md:flex-row md:gap-20 overflow-hidden h-screen justify-center items-center pb-[92px]">
+    <header className="flex flex-col gap-16 md:flex-row md:gap-20 overflow-hidden h-[100dvh] justify-center items-center pb-[92px]">
       <section className="flex flex-col gap-8 justify-center items-center md:items-start">
         <div className="flex flex-col gap-3 justify-center items-center md:items-start">
           <motion.h1
