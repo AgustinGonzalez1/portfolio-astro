@@ -10,7 +10,7 @@ export default function Header() {
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.5, ease: "easeInOut" }}
             viewport={{ once: true }}
-            className="text-5xl font-bebas text-white xl:text-8xl"
+            className="text-5xl font-bebas text-white xl:text-8xl text-center"
           >
             Hola, soy Ricardo Gonzalez.
           </motion.h1>
