@@ -13,7 +13,7 @@ const { title, description, img, link }: Props = Astro.props;
   <div
     class="bg-[#1A1A1A] hover:bg-[#333333] hover:translate-y-[-20px] duration-300 flex items-center justify-center rounded-t-xl px-8 pt-8 xl:p-8 xl:rounded-xl"
   >
-    <img class="rounded-t-xl xl:rounded-xl w-full" src={img} alt="" />
+    <img class="rounded-t-xl xl:rounded-xl w-full" src={img} alt={title} />
   </div>
   <div class="flex flex-col gap-10 justify-between">
     <div>
@@ -31,7 +31,7 @@ const { title, description, img, link }: Props = Astro.props;
         rel="noopener noreferrer"
         target="_blank">VISITAR</a
       >
-      <img src="/arrow.svg" alt="" />
+      <img src="/arrow.svg" alt="Ver aporte" />
     </div>
   </div>
 </article>

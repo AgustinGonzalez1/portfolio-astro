@@ -44,7 +44,7 @@ export default function Header() {
             rel="noopener noreferrer"
             className="w-12 h-12 flex items-center justify-center bg-[#222222] rounded-full hover:bg-transparent border-2 border-[#222222] hover:border-primary duration-200 ease-in-out"
           >
-            <img src="/in.svg" alt="" />
+            <img src="/in.svg" alt="LinkedIn" />
           </a>
           <a
             href="https://github.com/AgustinGonzalez1"
@@ -52,7 +52,7 @@ export default function Header() {
             rel="noopener noreferrer"
             className="w-12 h-12 flex items-center justify-center bg-[#222222] rounded-full hover:bg-transparent border-2 border-[#222222] hover:border-primary duration-200 ease-in-out"
           >
-            <img src="/github.svg" alt="" />
+            <img src="/github.svg" alt="GitHub" />
           </a>
         </motion.div>
       </section>
@@ -63,7 +63,7 @@ export default function Header() {
           transition={{ duration: 0.5, ease: "easeInOut", delay: 0.3 }}
           viewport={{ once: true }}
           src="/profile.png"
-          alt=""
+          alt="Foto de perfil"
           className="rounded-full w-60 sm:w-[300px] md:w-[600px] h-auto object-cover border-2 border-primary"
         />
       </section>
