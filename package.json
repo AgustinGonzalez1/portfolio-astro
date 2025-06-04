@@ -10,7 +10,7 @@
     "astro": "astro"
   },
   "engines": {
-    "node": "18.20.8",
+    "node": "18.x",
     "npm": ">=9.6.5"
   },
   "dependencies": {
