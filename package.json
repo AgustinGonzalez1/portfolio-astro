@@ -22,5 +22,8 @@
   },
   "devDependencies": {
     "prettier-plugin-astro": "^0.13.0"
+  },
+  "engines": {
+    "node": "18.20.8"
   }
 }
