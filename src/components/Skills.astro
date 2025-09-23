@@ -4,23 +4,25 @@ import { type Skills } from "../types/skills.ts";
 ---
 
 <main class="flex flex-col md:flex-row justify-between gap-4">
-	<section>
-		<h2 class="text-4xl xl:text-7xl font-bebas text-white">Mis habilidades</h2>
-	</section>
-	<section class="flex flex-col gap-8 w-full md:max-w-[50%]">
-		<p class="text-subtext font-manrope xl:text-lg">
-			Siempre estoy aprendiendo sobre nuevas tecnologías, lenguajes y frameworks. Próximamente mi stack estará compuesto por React
-			Native y C# en CoderHouse, y luego Java, C++ y PHP en Teclab (también tendré JavaScript y Python). <br /> Las tecnologías que
-			utilizo son:
-		</p>
-		<div class="flex flex-wrap gap-4">
-			{
-				arrSkills.map((skill: Skills) => (
-					<div class="flex items-center w-fit px-6 py-3 border-[2px] border-[#484848] rounded-md">
-						<p class="text-subtext font-manrope text-sm font-bold">{skill.name}</p>
-					</div>
-				))
-			}
-		</div>
-	</section>
+  <section>
+    <h2 class="text-4xl xl:text-7xl font-bebas text-white">Mis habilidades</h2>
+  </section>
+  <section class="flex flex-col gap-8 w-full md:max-w-[50%]">
+    <p class="text-subtext font-manrope xl:text-lg">
+      Siempre estoy aprendiendo sobre nuevas tecnologías, lenguajes y
+      frameworks. Actualmente estoy profundizando en React Native <br /> Las tecnologías
+      que utilizo son:
+    </p>
+    <div class="flex flex-wrap gap-4">
+      {
+        arrSkills.map((skill: Skills) => (
+          <div class="flex items-center w-fit px-6 py-3 border-[2px] border-[#484848] rounded-md">
+            <p class="text-subtext font-manrope text-sm font-bold">
+              {skill.name}
+            </p>
+          </div>
+        ))
+      }
+    </div>
+  </section>
 </main>
