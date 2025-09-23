@@ -21,7 +21,9 @@ export default function Header() {
             viewport={{ once: true }}
             className="text-subtext font-manrope lg:text-lg w-9/12 text-center md:text-left"
           >
-            Docente de Front-End y videojuegos en Play Code Latam • Full Stack Developer en Novigo Technology • Apasionado por diseñar experiencias web accesibles e intuitivas.
+            Docente de Front-End y videojuegos en Play Code Latam • Full Stack
+            Developer en Novigo Technology • Apasionado por diseñar experiencias
+            web accesibles e intuitivas.
           </motion.p>
         </div>
         <motion.div

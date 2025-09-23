@@ -4,7 +4,7 @@ import Navbar from "../components/Navbar.astro";
 import Connect from "../components/Connect.astro";
 
 interface Props {
-	title: string;
+  title: string;
 }
 
 const { title } = Astro.props;
@@ -12,49 +12,49 @@ const { title } = Astro.props;
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<ClientRouter />
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body class="mx-auto container">
-		<Navbar />
-		<slot />
-		<Connect />
-		<div class="mt-10"></div>
-		<style is:global>
-			@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
-			@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@200..800&display=swap");
-			* {
-				margin: 0;
-				padding: 0;
-				box-sizing: border-box;
-				scroll-behavior: smooth;
-				scroll-margin-top: 85px;
-			}
+  <head>
+    <ClientRouter />
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body class="mx-auto container">
+    <Navbar />
+    <slot />
+    <Connect />
+    <div class="mt-10"></div>
+    <style is:global>
+      @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@200..800&display=swap");
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        scroll-behavior: smooth;
+        scroll-margin-top: 85px;
+      }
 
-			body {
-				background-color: #0a0a0a;
-			}
+      body {
+        background-color: #0a0a0a;
+      }
 
-			.text-primary-hover::after {
-				content: "";
-				display: block;
-				width: 0px;
-				height: 1px;
-				top: 0;
-				background-color: #d3e97a;
-				margin-top: 1px;
-				transition: all 0.2s ease-in-out;
-			}
+      .text-primary-hover::after {
+        content: "";
+        display: block;
+        width: 0px;
+        height: 1px;
+        top: 0;
+        background-color: #d3e97a;
+        margin-top: 1px;
+        transition: all 0.2s ease-in-out;
+      }
 
-			.text-primary-hover:hover::after {
-				width: 100%;
-			}
-		</style>
-	</body>
+      .text-primary-hover:hover::after {
+        width: 100%;
+      }
+    </style>
+  </body>
 </html>

@@ -3,168 +3,168 @@ const { pathname } = Astro.url;
 ---
 
 <nav class="py-7 px-4 fixed container mx-auto w-full bg-[#0a0a0a] z-50">
-	<div class="flex justify-between">
-		<div>
-			<a href="/"
-				><h2
-					class="text-xl xl:text-3xl text-subtext font-bebas duration-300 hover:text-primary ease-in-out"
-				>
-					RICARDO GONZALEZ
-				</h2></a
-			>
-		</div>
+  <div class="flex justify-between">
+    <div>
+      <a href="/"
+        ><h2
+          class="text-xl xl:text-3xl text-subtext font-bebas duration-300 hover:text-primary ease-in-out"
+        >
+          RICARDO GONZALEZ
+        </h2></a
+      >
+    </div>
 
-		{
-			pathname === "/" ? (
-				<button>
-					<ul
-						id="ul"
-						class="text-sm bg-[#0a0a0a] gap-8 flex flex-col items-center justify-center sm:flex-row w-full sm:w-fit text-subtext font-manrope absolute top-[86px] h-0 duration-300 ease-out sm:h-fit overflow-hidden left-[50%] sm:sticky translate-x-[-50%] sm:translate-x-0"
-					>
-						<li class="hover:text-white duration-200 ease-in-out">
-							<a href="#contributions">Aportes</a>
-						</li>
-						<li class="hover:text-white duration-200 ease-in-out">
-							<a href="#projects">Proyectos</a>
-						</li>
-						<li class="hover:text-white duration-200 ease-in-out">
-							<a href="#about">Sobre mí</a>
-						</li>
-						<li class="hover:text-white duration-200 ease-in-out">
-							<a href="#contact">Contacto</a>
-						</li>
-					</ul>
-					<div class="sm:hidden block">
-						<i class="icon-menu" id="menu">
-							<span />
-						</i>
-					</div>
-				</button>
-			) : (
-				<a
-					href="/"
-					class="text-xl xl:text-3xl text-subtext font-bebas hover:text-primary duration-300 ease-in-out"
-				>
-					Volver
-				</a>
-			)
-		}
-	</div>
+    {
+      pathname === "/" ? (
+        <button>
+          <ul
+            id="ul"
+            class="text-sm bg-[#0a0a0a] gap-8 flex flex-col items-center justify-center sm:flex-row w-full sm:w-fit text-subtext font-manrope absolute top-[86px] h-0 duration-300 ease-out sm:h-fit overflow-hidden left-[50%] sm:sticky translate-x-[-50%] sm:translate-x-0"
+          >
+            <li class="hover:text-white duration-200 ease-in-out">
+              <a href="#contributions">Aportes</a>
+            </li>
+            <li class="hover:text-white duration-200 ease-in-out">
+              <a href="#projects">Proyectos</a>
+            </li>
+            <li class="hover:text-white duration-200 ease-in-out">
+              <a href="#about">Sobre mí</a>
+            </li>
+            <li class="hover:text-white duration-200 ease-in-out">
+              <a href="#contact">Contacto</a>
+            </li>
+          </ul>
+          <div class="sm:hidden block">
+            <i class="icon-menu" id="menu">
+              <span />
+            </i>
+          </div>
+        </button>
+      ) : (
+        <a
+          href="/"
+          class="text-xl xl:text-3xl text-subtext font-bebas hover:text-primary duration-300 ease-in-out"
+        >
+          Volver
+        </a>
+      )
+    }
+  </div>
 </nav>
 
 <style>
-	.icon-menu {
-		display: flex;
-		width: 30px;
-		height: 30px;
-		z-index: 2;
-		position: relative;
-		display: flex;
-		align-items: center;
-		cursor: pointer;
-		padding: 5px;
-	}
+  .icon-menu {
+    display: flex;
+    width: 30px;
+    height: 30px;
+    z-index: 2;
+    position: relative;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 5px;
+  }
 
-	span {
-		background-color: white;
-		width: 30px;
-		height: 3px;
-		position: absolute;
-		display: flex;
-		justify-content: flex-end;
-		transition: all 0.2s ease;
-		right: 0;
-		border-radius: 5px;
-	}
+  span {
+    background-color: white;
+    width: 30px;
+    height: 3px;
+    position: absolute;
+    display: flex;
+    justify-content: flex-end;
+    transition: all 0.2s ease;
+    right: 0;
+    border-radius: 5px;
+  }
 
-	span::before,
-	span::after {
-		position: absolute;
-		content: "";
-		width: 100%;
-		height: 100%;
-		background-color: white;
-		border-radius: 5px;
-	}
+  span::before,
+  span::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    border-radius: 5px;
+  }
 
-	span::before {
-		transform: translateY(-10px);
-		transition: all 0.3s 0.1s ease;
-	}
+  span::before {
+    transform: translateY(-10px);
+    transition: all 0.3s 0.1s ease;
+  }
 
-	span::after {
-		transform: translateY(10px);
-		transition: all 0.3s 0.2s ease;
-	}
+  span::after {
+    transform: translateY(10px);
+    transition: all 0.3s 0.2s ease;
+  }
 
-	.icon-menu:hover span {
-		width: 30px;
-	}
+  .icon-menu:hover span {
+    width: 30px;
+  }
 
-	.icon-menu:hover span::before {
-		width: 25px;
-	}
+  .icon-menu:hover span::before {
+    width: 25px;
+  }
 
-	.icon-menu:hover span::after {
-		width: 20px;
-	}
+  .icon-menu:hover span::after {
+    width: 20px;
+  }
 
-	.icon-closed {
-		justify-content: center;
-	}
+  .icon-closed {
+    justify-content: center;
+  }
 
-	.icon-closed span {
-		background-color: white;
-		justify-content: center;
-		width: 0px;
-		right: initial;
-		opacity: 0.5;
-		transition: all 0.6s ease;
-	}
+  .icon-closed span {
+    background-color: white;
+    justify-content: center;
+    width: 0px;
+    right: initial;
+    opacity: 0.5;
+    transition: all 0.6s ease;
+  }
 
-	.icon-closed span::before,
-	.icon-closed span::after {
-		width: 30px;
-		background-color: white;
-	}
+  .icon-closed span::before,
+  .icon-closed span::after {
+    width: 30px;
+    background-color: white;
+  }
 
-	.icon-closed span::before {
-		transform: rotate(45deg);
-	}
+  .icon-closed span::before {
+    transform: rotate(45deg);
+  }
 
-	.icon-closed span::after {
-		transform: rotate(-45deg);
-	}
+  .icon-closed span::after {
+    transform: rotate(-45deg);
+  }
 
-	.icon-closed:hover span {
-		width: 0;
-		opacity: 1;
-	}
+  .icon-closed:hover span {
+    width: 0;
+    opacity: 1;
+  }
 </style>
 
 <script>
-	document.addEventListener(
-		"astro:page-load",
-		() => {
-			const $menu = document?.querySelector("#menu") as HTMLElement;
-			const $ul = document.querySelector("#ul") as HTMLElement;
-			const $li = document.querySelectorAll(
-				"#ul li",
-			) as NodeListOf<HTMLElement>;
+  document.addEventListener(
+    "astro:page-load",
+    () => {
+      const $menu = document?.querySelector("#menu") as HTMLElement;
+      const $ul = document.querySelector("#ul") as HTMLElement;
+      const $li = document.querySelectorAll(
+        "#ul li",
+      ) as NodeListOf<HTMLElement>;
 
-			if ($menu) {
-				$menu.addEventListener("click", (): void => {
-					$menu.classList.toggle("icon-closed");
-					$ul.classList.toggle("h-[200px]");
-				});
-				$li.forEach((li) => {
-					li.addEventListener("click", (): void => {
-						$menu.classList.remove("icon-closed");
-						$ul.classList.toggle("h-[200px]");
-					});
-				});
-			}
-		},
-		{ once: false },
-	);
+      if ($menu) {
+        $menu.addEventListener("click", (): void => {
+          $menu.classList.toggle("icon-closed");
+          $ul.classList.toggle("h-[200px]");
+        });
+        $li.forEach((li) => {
+          li.addEventListener("click", (): void => {
+            $menu.classList.remove("icon-closed");
+            $ul.classList.toggle("h-[200px]");
+          });
+        });
+      }
+    },
+    { once: false },
+  );
 </script>

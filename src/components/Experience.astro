@@ -4,30 +4,36 @@ import { type Experience } from "../types/experience";
 ---
 
 <section class="flex flex-col lg:flex-row justify-between gap-4 pt-10">
-	<div>
-		<h2 class="text-4xl xl:text-7xl font-bebas text-white">Experiencia</h2>
-	</div>
-	<div class="flex flex-col md:min-w-[50%] gap-8">
-		<!-- card -->
+  <div>
+    <h2 class="text-4xl xl:text-7xl font-bebas text-white">Experiencia</h2>
+  </div>
+  <div class="flex flex-col md:min-w-[50%] gap-8">
+    <!-- card -->
 
-		{
-			experienceArr.map((experience: Experience) => (
-				<div class="flex items-center justify-between gap-4 w-full">
-					<div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 w-full">
-						<div class="flex gap-4 text-white">
-                                                        <img src={experience.logo} alt={experience.title} class="w-[52px] aspect-square" />
-							<div class="flex flex-col text-white">
-								<h4 class="text-xl font-manrope">{experience.title}</h4>
-								<p>{experience.role}</p>
-							</div>
-						</div>
-						<div class="flex justify-end">
-							<p class="text-subtext font-manrope xl:text-lg">{experience.date}</p>
-						</div>
-					</div>
-				</div>
-			))
-		}
-	</div>
-	<!-- card -->
+    {
+      experienceArr.map((experience: Experience) => (
+        <div class="flex items-center justify-between gap-4 w-full">
+          <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 w-full">
+            <div class="flex gap-4 text-white">
+              <img
+                src={experience.logo}
+                alt={experience.title}
+                class="w-[52px] aspect-square"
+              />
+              <div class="flex flex-col text-white">
+                <h4 class="text-xl font-manrope">{experience.title}</h4>
+                <p>{experience.role}</p>
+              </div>
+            </div>
+            <div class="flex justify-end">
+              <p class="text-subtext font-manrope xl:text-lg">
+                {experience.date}
+              </p>
+            </div>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+  <!-- card -->
 </section>
