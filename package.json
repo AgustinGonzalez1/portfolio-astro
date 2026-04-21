@@ -7,7 +7,7 @@
     "@astrojs/react": "^4.3.0",
     "@astrojs/tailwind": "^6.0.2",
     "@astrojs/telemetry": "^3.3.0",
-    "astro": "^5.8.2",
+    "astro": "^6.1.6",
     "framer-motion": "^12.16.0",
     "nanostores": "^1.0.0",
     "react": "^19.1.0",
