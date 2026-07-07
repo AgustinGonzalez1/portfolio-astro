@@ -66,7 +66,7 @@ export default function Header() {
           viewport={{ once: true }}
           src="/profile.png"
           alt="Foto de perfil"
-          className="rounded-full w-60 sm:w-[300px] md:w-[600px] h-auto object-cover border-2 border-primary"
+          className="rounded-full w-60 sm:w-[300px] md:w-[600px] h-auto object-cover border-2 border-primary aspect-square"
         />
       </section>
     </header>
