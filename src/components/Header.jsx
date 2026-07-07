@@ -24,7 +24,9 @@ export default function Header() {
             Docente de varios cursos en CodiLab • Full Stack Developer en Novigo
             Technology •{" "}
             <a
-              href=""
+              href="https://www.youtube.com/@MrCodigos"
+              target="__blank"
+              rel="noreferrer noopener"
               className="text-primary hover:text-primary/50 duration-300"
             >
               MrCodigos
