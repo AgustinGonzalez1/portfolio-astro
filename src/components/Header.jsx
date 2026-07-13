@@ -21,9 +21,18 @@ export default function Header() {
             viewport={{ once: true }}
             className="text-subtext font-manrope lg:text-lg w-9/12 text-center md:text-left"
           >
-            Docente de Front-End y videojuegos en Play Code Latam • Full Stack
-            Developer en Novigo Technology • Apasionado por diseñar experiencias
-            web accesibles e intuitivas.
+            Docente de varios cursos en CodiLab • Full Stack Developer en Novigo
+            Technology •{" "}
+            <a
+              href="https://www.youtube.com/@MrCodigos"
+              target="__blank"
+              rel="noreferrer noopener"
+              className="text-primary hover:text-primary/50 duration-300"
+            >
+              MrCodigos
+            </a>{" "}
+            en YouTube • Apasionado por diseñar experiencias web accesibles e
+            intuitivas.
           </motion.p>
         </div>
         <motion.div
@@ -66,7 +75,7 @@ export default function Header() {
           viewport={{ once: true }}
           src="/profile.png"
           alt="Foto de perfil"
-          className="rounded-full w-60 sm:w-[300px] md:w-[600px] h-auto object-cover border-2 border-primary"
+          className="rounded-full w-60 sm:w-[300px] md:w-[600px] h-auto object-cover border-2 border-primary aspect-square"
         />
       </section>
     </header>
