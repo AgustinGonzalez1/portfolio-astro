@@ -4,7 +4,7 @@ export const experienceArr: Experience[] = [
   {
     title: "PlayCodeLatam",
     role: "Docente Front-End",
-    date: "Marzo 2024 - actualidad",
+    date: "Enero 2024 - Enero 2026",
     logo: "experience/playcodelatam.png",
   },
   {
@@ -15,8 +15,14 @@ export const experienceArr: Experience[] = [
   },
   {
     title: "NovigoTechnology",
-    role: "FullStack Frappe-Vuejs",
+    role: "FullStack Python-Vuejs",
     date: "Noviembre 2024 - actualidad",
     logo: "experience/novigo.png",
+  },
+  {
+    title: "CodiLab",
+    role: "Docente",
+    date: "febrero 2026 - actualidad",
+    logo: "experience/codilab.jpg",
   },
 ];
