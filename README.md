@@ -4,11 +4,10 @@ Este repositorio contiene el código de mi portafolio profesional. El sitio mues
 
 ## Características principales
 
-- **Astro 5 + React** para combinar rendimiento y secciones interactivas.
+- **Astro 7** para generar páginas estáticas con JavaScript solo donde hace falta.
 - **TypeScript** para un código más seguro y mantenible.
 - **Tailwind CSS** con un diseño responsivo desde el primer momento.
-- **Framer Motion** para transiciones y animaciones suaves.
-- **Nanostores** como manejo ligero de estado para el menú en móviles.
+- **Animaciones CSS** en la portada, respetando la preferencia de movimiento reducido.
 - Información de proyectos, aportes y experiencia centralizada en `src/utils` para facilitar su edición.
 
 ## Instalación
@@ -59,7 +58,7 @@ npm run preview
 portfolio-astro/
 ├── public/                # Imágenes y otros assets estáticos
 ├── src/
-│   ├── components/        # Componentes Astro y React
+│   ├── components/        # Componentes Astro
 │   ├── layouts/           # Plantillas base de las páginas
 │   ├── pages/             # Rutas del sitio
 │   ├── types/             # Definiciones de TypeScript
@@ -75,4 +74,3 @@ Para modificar los proyectos, aportes o habilidades, edita los archivos dentro d
 ---
 
 ¡Si este proyecto te resulta útil, no olvides dejar una **estrellita** en GitHub para apoyar!
-

@@ -1,6 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Header from "../components/Header.jsx";
+import Hero from "../components/Hero.astro";
 import Projects from "../components/Projects.astro";
 import About from "../components/AboutMe.astro";
 import Experience from "../components/Experience.astro";
@@ -9,7 +9,7 @@ import Aportes from "../components/Aportes.astro";
 
 <Layout title="INDEX | RAG">
   <div class="px-4">
-    <Header client:load />
+    <Hero />
     <div class="w-full h-[1px] bg-[#484848] mb-16 md:my-20"></div>
     <Aportes />
     <div class="w-full h-[1px] bg-[#484848] my-16 md:my-20"></div>
