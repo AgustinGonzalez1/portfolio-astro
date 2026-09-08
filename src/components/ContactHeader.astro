@@ -1,10 +1,11 @@
 ---
 import SocialLinks from "./SocialLinks.astro";
+import { profile } from "../data/profile";
 ---
 
 <div class="flex gap-4">
   <a
-    href="/ricardo-agustin-gonzalez-cv.pdf"
+    href={profile.cvUrl}
     target="_blank"
     rel="noopener noreferrer"
     class="font-manrope flex items-center font-bold bg-primary border-2 border-primary hover:bg-transparent hover:text-white duration-300 rounded-full p-1 px-4 gap-3 text-sm"

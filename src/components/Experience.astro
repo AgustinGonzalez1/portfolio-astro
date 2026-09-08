@@ -1,7 +1,7 @@
 ---
 import { Image } from "astro:assets";
-import { experienceArr } from "../utils/experienceArr";
-import { type Experience } from "../types/experience";
+import { experiences } from "../data/experience";
+import type { Experience } from "../types/experience";
 ---
 
 <section class="flex flex-col lg:flex-row justify-between gap-4 pt-10">
@@ -12,7 +12,7 @@ import { type Experience } from "../types/experience";
     <!-- card -->
 
     {
-      experienceArr.map((experience: Experience) => (
+      experiences.map((experience: Experience) => (
         <div class="flex items-center justify-between gap-4 w-full">
           <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 w-full">
             <div class="flex gap-4 text-white">

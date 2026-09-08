@@ -1,11 +1,11 @@
-import { type Contribution } from "../types/contributions";
+import type { Contribution } from "../types/contributions";
 import mapbyderm from "../assets/contributions/mapbyderm.png";
 import quickNovigo from "../assets/contributions/quickNovigo.png";
 import profPlaycode from "../assets/contributions/profPlaycode.jpeg";
 import studyNovigo from "../assets/contributions/studyNovigo.png";
 import sanityAstro from "../assets/contributions/sanityAstro.png";
 
-export const arrContributions: Contribution[] = [
+export const contributions: Contribution[] = [
   {
     title: "Puntos de venta - By Derm",
     description:

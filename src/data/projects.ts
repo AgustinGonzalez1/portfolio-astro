@@ -1,10 +1,10 @@
-import { type Project } from "../types/projects";
+import type { Project } from "../types/projects";
 import react from "../assets/projects/react.jpg";
 import muebles from "../assets/projects/muebles.jpg";
 import taskMaster from "../assets/projects/taskMaster.jpg";
 import corona from "../assets/projects/corona.jpg";
 
-export const arrProjects: Project[] = [
+export const projects: Project[] = [
   {
     title: "Proyecto Final de React",
     description:

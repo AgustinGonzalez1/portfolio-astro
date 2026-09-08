@@ -1,5 +1,6 @@
 ---
-import { arrContributions } from "../utils/arrContributions";
+import { contributions } from "../data/contributions";
+import type { Contribution } from "../types/contributions";
 import WorkCard from "./WorkCard.astro";
 import WorkSection from "./WorkSection.astro";
 ---
@@ -9,5 +10,9 @@ import WorkSection from "./WorkSection.astro";
   title="Mejores Aportes"
   description="Estos son algunos de los mejores aportes que he realizado a lo largo de mi carrera profesional como full stack"
 >
-  {arrContributions.map((contribution) => <WorkCard {...contribution} />)}
+  {
+    contributions.map((contribution: Contribution) => (
+      <WorkCard {...contribution} />
+    ))
+  }
 </WorkSection>

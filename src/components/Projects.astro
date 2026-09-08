@@ -1,5 +1,6 @@
 ---
-import { arrProjects } from "../utils/arrProjects";
+import { projects } from "../data/projects";
+import type { Project } from "../types/projects";
 import WorkCard from "./WorkCard.astro";
 import WorkSection from "./WorkSection.astro";
 ---
@@ -10,7 +11,7 @@ import WorkSection from "./WorkSection.astro";
   description="Estos son algunos de los proyectos que he creado a lo largo de mi carrera."
 >
   {
-    arrProjects.map((project) => (
+    projects.map((project: Project) => (
       <WorkCard
         {...project}
         details={[

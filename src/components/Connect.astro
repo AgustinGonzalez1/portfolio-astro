@@ -1,5 +1,6 @@
 ---
 import SocialLinks from "./SocialLinks.astro";
+import { profile } from "../data/profile";
 const currentYear = new Date().getFullYear();
 ---
 
@@ -19,7 +20,7 @@ const currentYear = new Date().getFullYear();
   </div>
   <footer>
     <p class="text-center text-subtext font-manrope text-sm">
-      © {currentYear} Ricardo Gonzalez
+      {`© ${currentYear} ${profile.name}`}
     </p>
   </footer>
 </section>

@@ -1,6 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import profile from "../assets/profile.png";
+import { profile } from "../data/profile";
 import SocialLinks from "./SocialLinks.astro";
 ---
 
@@ -14,24 +14,23 @@ import SocialLinks from "./SocialLinks.astro";
       <h1
         class="hero-reveal text-4xl font-bebas text-white xl:text-8xl text-center md:text-left"
       >
-        Hola, soy Ricardo Gonzalez.
+        Hola, soy {profile.name}.
       </h1>
       <p
         class="hero-reveal text-subtext font-manrope lg:text-lg w-9/12 text-center md:text-left"
         style="--reveal-delay: 100ms"
       >
-        Docente de varios cursos en CodiLab • Full Stack Developer en Novigo
-        Technology • {" "}
+        {profile.hero.roles} • {" "}
         <a
-          href="https://www.youtube.com/@MrCodigos"
+          href={profile.youtube.href}
           target="_blank"
           rel="noopener noreferrer"
           class="text-primary hover:text-primary/50 duration-300"
         >
-          MrCodigos
+          {profile.youtube.name}
         </a>
         {" "}
-        en YouTube • Apasionado por diseñar experiencias web accesibles e intuitivas.
+        {profile.hero.description}
       </p>
     </div>
     <div class="hero-reveal flex gap-4" style="--reveal-delay: 200ms">
@@ -49,8 +48,8 @@ import SocialLinks from "./SocialLinks.astro";
     class="mx-auto max-w-80 sm:max-w-[400px] md:max-w-[600px] flex justify-center items-center"
   >
     <Image
-      src={profile}
-      alt="Foto de perfil"
+      src={profile.photo}
+      alt={profile.photoAlt}
       width={600}
       height={600}
       widths={[240, 300, 480, 600, 900, 1024]}

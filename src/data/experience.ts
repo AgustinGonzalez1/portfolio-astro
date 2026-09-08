@@ -1,10 +1,10 @@
-import { type Experience } from "../types/experience";
+import type { Experience } from "../types/experience";
 import playcodelatam from "../assets/experience/playcodelatam.png";
 import byderm from "../assets/experience/byderm.png";
 import novigo from "../assets/experience/novigo.png";
 import codilab from "../assets/experience/codilab.jpg";
 
-export const experienceArr: Experience[] = [
+export const experiences: Experience[] = [
   {
     title: "PlayCodeLatam",
     role: "Docente Front-End",

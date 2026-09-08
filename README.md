@@ -9,7 +9,7 @@ Este repositorio contiene el código de mi portafolio profesional. El sitio mues
 - **Tailwind CSS** con un diseño responsivo desde el primer momento.
 - **Animaciones CSS** en la portada, respetando la preferencia de movimiento reducido.
 - **Imágenes optimizadas con Astro**: WebP, tamaños adaptados a la pantalla y carga diferida fuera de la portada.
-- Información de proyectos, aportes y experiencia centralizada en `src/utils` para facilitar su edición.
+- Información personal, proyectos, aportes, experiencia y habilidades centralizada en `src/data` para facilitar su edición.
 
 ## Instalación
 
@@ -68,18 +68,24 @@ portfolio-astro/
 ├── src/
 │   ├── assets/            # Fotos, capturas y logos originales
 │   ├── components/        # Componentes Astro
-│   ├── data/              # Enlaces sociales compartidos
+│   ├── data/              # Perfil, redes y contenido del portfolio
 │   ├── layouts/           # Plantillas base de las páginas
 │   ├── pages/             # Rutas del sitio
-│   ├── types/             # Definiciones de TypeScript
-│   └── utils/             # Datos de proyectos, skills, etc.
-├── astro.config.mjs       # Configuración de Astro
-└── tailwind.config.mjs    # Configuración de Tailwind
+│   ├── styles/            # Estilos globales
+│   └── types/             # Definiciones de TypeScript
+└── astro.config.mjs       # Configuración de Astro y Tailwind
 ```
 
 ## Personalización
 
-Para modificar los proyectos, aportes o habilidades, edita los archivos dentro de `src/utils/`. Cada sección está separada en su propio archivo para que puedas actualizar la información de forma sencilla.
+Para actualizar el contenido, edita los archivos de `src/data/`:
+
+- `profile.ts`: nombre, foto, presentación, biografía, YouTube, CV y descripción de aprendizaje.
+- `socials.ts`: LinkedIn, GitHub, Instagram y correo.
+- `projects.ts`: proyectos, con año y rol.
+- `contributions.ts`: aportes profesionales.
+- `experience.ts`: experiencia laboral.
+- `skills.ts`: lista de nombres de tecnologías.
 
 Guarda las fotos, capturas y logos en `src/assets/` e impórtalos desde los datos o componentes. Astro genera las versiones WebP durante la compilación; los originales se conservan en el repositorio. Las imágenes sin referencias no se incluyen en el sitio generado. `ProjectImage.astro` centraliza los tamaños de las capturas de proyectos y aportes.
 
