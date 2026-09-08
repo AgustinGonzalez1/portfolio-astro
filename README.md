@@ -8,6 +8,7 @@ Este repositorio contiene el código de mi portafolio profesional. El sitio mues
 - **TypeScript** para un código más seguro y mantenible.
 - **Tailwind CSS** con un diseño responsivo desde el primer momento.
 - **Animaciones CSS** en la portada, respetando la preferencia de movimiento reducido.
+- **Menú móvil** con apertura y cierre animados; se cierra al elegir un enlace o hacer clic fuera.
 - **Imágenes optimizadas con Astro**: WebP, tamaños adaptados a la pantalla y carga diferida fuera de la portada.
 - Información personal, proyectos, aportes, experiencia y habilidades centralizada en `src/data` para facilitar su edición.
 
