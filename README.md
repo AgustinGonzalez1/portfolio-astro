@@ -11,6 +11,7 @@ Este repositorio contiene el código de mi portafolio profesional. El sitio mues
 - **Menú móvil** con apertura y cierre animados; se cierra al elegir un enlace o hacer clic fuera.
 - **Imágenes optimizadas con Astro**: WebP, tamaños adaptados a la pantalla y carga diferida fuera de la portada.
 - Información personal, proyectos, aportes, experiencia y habilidades centralizada en `src/data` para facilitar su edición.
+- Páginas en español con títulos, descripciones, URL canónica y metadatos para compartir el portfolio.
 
 ## Instalación
 
@@ -65,7 +66,7 @@ npm run preview
 
 ```
 portfolio-astro/
-├── public/                # Iconos SVG, favicon y CV
+├── public/                # Logo, iconos, imagen para compartir y CV
 ├── src/
 │   ├── assets/            # Fotos, capturas y logos originales
 │   ├── components/        # Componentes Astro
@@ -81,7 +82,7 @@ portfolio-astro/
 
 Para actualizar el contenido, edita los archivos de `src/data/`:
 
-- `profile.ts`: nombre, foto, presentación, biografía, YouTube, CV y descripción de aprendizaje.
+- `profile.ts`: nombre, logo, foto, presentación, biografía, YouTube, CV y descripción de aprendizaje.
 - `socials.ts`: LinkedIn, GitHub, Instagram y correo.
 - `projects.ts`: proyectos, con año y rol.
 - `contributions.ts`: aportes profesionales.
@@ -91,6 +92,10 @@ Para actualizar el contenido, edita los archivos de `src/data/`:
 Guarda las fotos, capturas y logos en `src/assets/` e impórtalos desde los datos o componentes. Astro genera las versiones WebP durante la compilación; los originales se conservan en el repositorio. Las imágenes sin referencias no se incluyen en el sitio generado. `ProjectImage.astro` centraliza los tamaños de las capturas de proyectos y aportes.
 
 `WorkCard.astro` y `WorkSection.astro` comparten la presentación de proyectos y aportes; los proyectos agregan año y rol mediante `details`. Para actualizar las redes sociales, edita `src/data/socials.ts`: `SocialLinks.astro` las muestra en la portada, la sección del CV y el contacto.
+
+La URL pública está definida en `site` dentro de `astro.config.mjs`. Cada página pasa su título y descripción a `Layout.astro`, que genera los metadatos compartidos.
+
+`public/logo.svg` se muestra al inicio del navbar. Sus versiones para otros usos son `favicon.svg`, `favicon.png` (32 × 32), `apple-touch-icon.png` (180 × 180) y `og-image.png` (1200 × 630). Si reemplazás el logo, actualizá también estas versiones.
 
 ---
 

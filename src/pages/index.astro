@@ -5,9 +5,13 @@ import Projects from "../components/Projects.astro";
 import About from "../components/AboutMe.astro";
 import Experience from "../components/Experience.astro";
 import Aportes from "../components/Aportes.astro";
+import { profile } from "../data/profile";
 ---
 
-<Layout title="INDEX | RAG">
+<Layout
+  title={`${profile.name} | Desarrollador Full Stack`}
+  description={`Portfolio de ${profile.name}, desarrollador Full Stack y docente de programación. Proyectos web, aportes profesionales y experiencia con PERN, Python y Vue.`}
+>
   <div class="px-4">
     <Hero />
     <div class="w-full h-[1px] bg-[#484848] mb-16 md:my-20"></div>

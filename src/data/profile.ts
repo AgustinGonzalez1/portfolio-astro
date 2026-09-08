@@ -4,6 +4,7 @@ const learningTechnology = "React Native";
 
 export const profile = {
   name: "Ricardo Gonzalez",
+  logo: "/logo.svg",
   photo,
   photoAlt: "Foto de perfil",
   cvUrl: "/ricardo-agustin-gonzalez-cv.pdf",

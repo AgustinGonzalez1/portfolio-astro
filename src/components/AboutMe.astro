@@ -1,18 +1,29 @@
 ---
-const { pathname } = Astro.url;
 import ContactHeader from "./ContactHeader.astro";
 import { profile } from "../data/profile";
+
+interface Props {
+  headingTag?: "h1" | "h2";
+}
+
+const { headingTag: Heading = "h2" }: Props = Astro.props;
+const { pathname } = Astro.url;
 ---
 
-<aside id="about" class="flex flex-col md:flex-row justify-between gap-4 pt-10">
+<section
+  id="about"
+  class="flex flex-col md:flex-row justify-between gap-4 pt-10"
+>
   <div>
-    <h2 class="text-4xl xl:text-7xl font-bebas text-white">Sobre mí</h2>
+    <Heading class="text-4xl xl:text-7xl font-bebas text-white"
+      >Sobre mí</Heading
+    >
   </div>
   <div class="flex flex-col md:max-w-[50%] gap-8">
     <div class="flex flex-col gap-4">
-      <h4 class="text-white text-2xl font-manrope">
+      <p class="text-white text-2xl font-manrope">
         {profile.about.headline}
-      </h4>
+      </p>
       <p class="text-subtext font-manrope xl:text-lg">
         {profile.about.background} Actualmente soy {profile.about.teaching.role} en
         <span class="text-primary">{profile.about.teaching.organization}</span>
@@ -37,4 +48,4 @@ import { profile } from "../data/profile";
       )
     }
   </div>
-</aside>
+</section>
