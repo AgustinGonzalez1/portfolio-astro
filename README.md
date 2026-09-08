@@ -32,7 +32,13 @@ El sitio estará disponible en `http://localhost:4321`.
 
 ## Compilar para producción
 
-Para generar la versión optimizada ejecuta:
+Para comprobar TypeScript en los archivos `.ts` y `.astro`, ejecuta:
+
+```bash
+npm run check
+```
+
+Para generar la versión optimizada ejecuta el siguiente comando, que también comprueba los tipos antes de compilar:
 
 ```bash
 npm run build
@@ -49,7 +55,8 @@ npm run preview
 | Comando | Descripción |
 | ------- | ----------- |
 | `npm run dev` | Inicia el servidor de desarrollo |
-| `npm run build` | Compila el sitio en `dist/` |
+| `npm run check` | Revisa TypeScript y los componentes Astro |
+| `npm run build` | Comprueba los tipos y compila el sitio en `dist/` |
 | `npm run preview` | Previsualiza la versión compilada |
 | `npm run astro` | Acceso a la CLI de Astro |
 
@@ -61,6 +68,7 @@ portfolio-astro/
 ├── src/
 │   ├── assets/            # Fotos, capturas y logos originales
 │   ├── components/        # Componentes Astro
+│   ├── data/              # Enlaces sociales compartidos
 │   ├── layouts/           # Plantillas base de las páginas
 │   ├── pages/             # Rutas del sitio
 │   ├── types/             # Definiciones de TypeScript
@@ -74,6 +82,8 @@ portfolio-astro/
 Para modificar los proyectos, aportes o habilidades, edita los archivos dentro de `src/utils/`. Cada sección está separada en su propio archivo para que puedas actualizar la información de forma sencilla.
 
 Guarda las fotos, capturas y logos en `src/assets/` e impórtalos desde los datos o componentes. Astro genera las versiones WebP durante la compilación; los originales se conservan en el repositorio. Las imágenes sin referencias no se incluyen en el sitio generado. `ProjectImage.astro` centraliza los tamaños de las capturas de proyectos y aportes.
+
+`WorkCard.astro` y `WorkSection.astro` comparten la presentación de proyectos y aportes; los proyectos agregan año y rol mediante `details`. Para actualizar las redes sociales, edita `src/data/socials.ts`: `SocialLinks.astro` las muestra en la portada, la sección del CV y el contacto.
 
 ---
 

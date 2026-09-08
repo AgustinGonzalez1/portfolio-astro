@@ -1,8 +1,3 @@
-import type { ImageMetadata } from "astro";
+import type { WorkItem } from "./work";
 
-export type Contribution = {
-  title: string;
-  description: string;
-  link: string;
-  img: ImageMetadata;
-};
+export type Contribution = WorkItem;
