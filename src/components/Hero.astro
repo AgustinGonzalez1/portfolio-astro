@@ -1,3 +1,8 @@
+---
+import { Image } from "astro:assets";
+import profile from "../assets/profile.png";
+---
+
 <header
   class="flex flex-col gap-8 md:flex-row md:gap-20 overflow-hidden h-screen justify-center items-center"
 >
@@ -57,9 +62,16 @@
   <section
     class="mx-auto max-w-80 sm:max-w-[400px] md:max-w-[600px] flex justify-center items-center"
   >
-    <img
-      src="/profile.png"
+    <Image
+      src={profile}
       alt="Foto de perfil"
+      width={600}
+      height={600}
+      widths={[240, 300, 480, 600, 900, 1024]}
+      sizes="(min-width: 768px) 600px, (min-width: 640px) 300px, 240px"
+      format="webp"
+      fit="cover"
+      priority
       class="hero-reveal rounded-full w-60 sm:w-[300px] md:w-[600px] h-auto object-cover border-2 border-primary aspect-square"
       style="--reveal-delay: 300ms"
     />

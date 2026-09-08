@@ -8,6 +8,7 @@ Este repositorio contiene el código de mi portafolio profesional. El sitio mues
 - **TypeScript** para un código más seguro y mantenible.
 - **Tailwind CSS** con un diseño responsivo desde el primer momento.
 - **Animaciones CSS** en la portada, respetando la preferencia de movimiento reducido.
+- **Imágenes optimizadas con Astro**: WebP, tamaños adaptados a la pantalla y carga diferida fuera de la portada.
 - Información de proyectos, aportes y experiencia centralizada en `src/utils` para facilitar su edición.
 
 ## Instalación
@@ -56,8 +57,9 @@ npm run preview
 
 ```
 portfolio-astro/
-├── public/                # Imágenes y otros assets estáticos
+├── public/                # Iconos SVG, favicon y CV
 ├── src/
+│   ├── assets/            # Fotos, capturas y logos originales
 │   ├── components/        # Componentes Astro
 │   ├── layouts/           # Plantillas base de las páginas
 │   ├── pages/             # Rutas del sitio
@@ -70,6 +72,8 @@ portfolio-astro/
 ## Personalización
 
 Para modificar los proyectos, aportes o habilidades, edita los archivos dentro de `src/utils/`. Cada sección está separada en su propio archivo para que puedas actualizar la información de forma sencilla.
+
+Guarda las fotos, capturas y logos en `src/assets/` e impórtalos desde los datos o componentes. Astro genera las versiones WebP durante la compilación; los originales se conservan en el repositorio. Las imágenes sin referencias no se incluyen en el sitio generado. `ProjectImage.astro` centraliza los tamaños de las capturas de proyectos y aportes.
 
 ---
 

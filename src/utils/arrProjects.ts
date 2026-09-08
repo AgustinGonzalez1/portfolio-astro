@@ -1,4 +1,8 @@
 import { type Project } from "../types/projects";
+import react from "../assets/projects/react.jpg";
+import muebles from "../assets/projects/muebles.jpg";
+import taskMaster from "../assets/projects/taskMaster.jpg";
+import corona from "../assets/projects/corona.jpg";
 
 export const arrProjects: Project[] = [
   {
@@ -6,7 +10,7 @@ export const arrProjects: Project[] = [
     description:
       "Mi proyecto final en React demuestra mi pasión por este framework y mi capacidad para crear soluciones dinámicas. Creé un eCommerce completo que permite a los usuarios agregar, eliminar y comprar productos, integrando Firebase para un proceso de compra fluido con actualización en tiempo real del stock. Este proyecto me ubicó en el top 10 de mi curso y refleja mi habilidad para convertir ideas en experiencias interactivas y funcionales.",
     link: "https://sportify-tienda.netlify.app/",
-    img: "/imgProjects/react.jpg",
+    img: react,
     year: 2023,
     role: "Frontend - Backend(Firebase)",
   },
@@ -15,7 +19,7 @@ export const arrProjects: Project[] = [
     description:
       "Este proyecto se me otorgo gracias al top 10 en React en el curso de CoderHouse, donde ejercí el rol de desarrollador FrontEnd junto con 3 diseñadoras y una product manager, adquirí mucha experiencia nueva y lo mas valioso de formar un grupo de trabajo, aprendiendo SCRUM",
     link: "https://muebles-a-medida.netlify.app/",
-    img: "/imgProjects/muebles.jpg",
+    img: muebles,
     year: 2023,
     role: "Frontend",
   },
@@ -24,7 +28,7 @@ export const arrProjects: Project[] = [
     description:
       "En este proyecto de práctica, desarrollé tanto el FrontEnd como el BackEnd, implementando tokens de seguridad para proteger las rutas, manejando errores para garantizar un funcionamiento adecuado y mejorando mis habilidades en las tecnologías utilizadas para adquirir más experiencia.",
     link: "https://taskmasterhub.vercel.app/",
-    img: "/imgProjects/taskMaster.jpg",
+    img: taskMaster,
     year: 2023,
     role: "FullStack",
   },
@@ -33,7 +37,7 @@ export const arrProjects: Project[] = [
     description:
       "Gracias a este proyecto, logré entrar nuevamente al top 10 en CoderHouse. Fue una experiencia invaluable que me permitió profundizar aún más en Next.js y Firebase, además de aplicar buenas prácticas de desarrollo.",
     link: "https://corona-ecommerce.vercel.app/",
-    img: "/imgProjects/corona.jpg",
+    img: corona,
     year: 2024,
     role: "Frontend",
   },

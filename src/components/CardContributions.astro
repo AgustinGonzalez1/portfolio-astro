@@ -1,10 +1,8 @@
 ---
-interface Props {
-  title: string;
-  description: string;
-  img: string;
-  link: string;
-}
+import ProjectImage from "./ProjectImage.astro";
+import type { Contribution } from "../types/contributions";
+
+type Props = Contribution;
 
 const { title, description, img, link }: Props = Astro.props;
 ---
@@ -13,7 +11,7 @@ const { title, description, img, link }: Props = Astro.props;
   <div
     class="bg-[#1A1A1A] hover:bg-[#333333] hover:translate-y-[-20px] duration-300 flex items-center justify-center rounded-t-xl px-8 pt-8 xl:p-8 xl:rounded-xl"
   >
-    <img class="rounded-t-xl xl:rounded-xl w-full" src={img} alt={title} />
+    <ProjectImage src={img} alt={title} class="w-full" />
   </div>
   <div class="flex flex-col gap-10 justify-between">
     <div>
