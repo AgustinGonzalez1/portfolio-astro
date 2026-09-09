@@ -3,15 +3,38 @@ import SocialLinks from "./SocialLinks.astro";
 import { profile } from "../data/profile";
 ---
 
-<div class="flex gap-4">
+<div class="about-actions">
   <a
+    class="button-primary"
     href={profile.cvUrl}
+    aria-label="Descargar CV en PDF"
     target="_blank"
     rel="noopener noreferrer"
-    class="font-manrope flex items-center font-bold bg-primary border-2 border-primary hover:bg-transparent hover:text-white duration-300 rounded-full p-1 px-4 gap-3 text-sm"
   >
-    <p>DESCARGAR CV</p>
+    <span>Descargar CV</span>
+    <span aria-hidden="true">↗</span>
   </a>
 
-  <SocialLinks />
+  <SocialLinks variant="text" />
 </div>
+
+<style>
+  .about-actions {
+    display: flex;
+    align-items: center;
+    gap: 26px;
+    flex-wrap: wrap;
+    margin-top: 37px;
+  }
+
+  .button-primary {
+    min-width: 190px;
+    min-height: 50px;
+  }
+
+  @media (max-width: 720px) {
+    .about-actions {
+      gap: 16px 24px;
+    }
+  }
+</style>

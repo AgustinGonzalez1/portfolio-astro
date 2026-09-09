@@ -21,7 +21,7 @@ import { profile } from "../data/profile";
           <p>{paragraph}</p>
         ))
       }
-      <a class="about-link" href="/about">
+      <a class="text-link about-link" href="/about">
         <span>Más sobre mí <span aria-hidden="true">↗</span></span>
       </a>
     </div>
@@ -61,25 +61,7 @@ import { profile } from "../data/profile";
   }
 
   .about-link {
-    display: inline-flex;
-    align-items: center;
-    min-height: 34px;
     margin-top: 23px;
-    color: #c4c8cc;
-    font-size: 10px;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    border-bottom: 1px solid var(--color-accent);
-    transition: color 0.2s ease;
-  }
-
-  .about-link:hover {
-    color: var(--color-accent);
-  }
-
-  .about-link:focus-visible {
-    outline: 2px solid var(--color-accent);
-    outline-offset: 5px;
   }
 
   @media (max-width: 1150px) {
@@ -104,12 +86,6 @@ import { profile } from "../data/profile";
   @media (max-width: 720px) {
     .about-title {
       font-size: 42px;
-    }
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .about-link {
-      transition: none;
     }
   }
 </style>

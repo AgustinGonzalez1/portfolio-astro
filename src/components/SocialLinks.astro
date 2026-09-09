@@ -3,13 +3,13 @@ import { socialLinks, type SocialNetwork } from "../data/socials";
 
 interface Props {
   networks?: SocialNetwork[];
-  variant?: "circle" | "outline";
+  variant?: "outline" | "text";
   class?: string;
 }
 
 const {
   networks = ["linkedin", "github"],
-  variant = "circle",
+  variant = "outline",
   class: className,
 }: Props = Astro.props;
 ---
@@ -22,13 +22,19 @@ const {
 
       return (
         <a
-          class="social-link"
+          class:list={["social-link", { "text-link": variant === "text" }]}
           href={href}
           aria-label={label}
           target={isExternal ? "_blank" : undefined}
           rel={isExternal ? "noopener noreferrer" : undefined}
         >
-          <Icon aria-hidden="true" focusable="false" />
+          {variant === "text" ? (
+            <span>
+              {label} <span aria-hidden="true">↗</span>
+            </span>
+          ) : (
+            <Icon aria-hidden="true" focusable="false" />
+          )}
         </a>
       );
     })
@@ -42,52 +48,34 @@ const {
     flex-wrap: wrap;
   }
 
-  .social-link {
-    display: grid;
-    place-items: center;
-    flex: none;
-    border-radius: 50%;
-    transition:
-      color 0.2s ease,
-      border-color 0.2s ease,
-      background-color 0.2s ease,
-      transform 0.2s ease;
-  }
-
-  .social-link :global(svg) {
-    display: block;
-    width: 24px;
-    height: 24px;
-    fill: currentColor;
-  }
-
-  .social-links--circle {
-    gap: 16px;
-  }
-
-  .social-links--circle .social-link {
-    width: 48px;
-    height: 48px;
-    color: var(--color-primary);
-    background: #222222;
-    border: 2px solid #222222;
-    transition-duration: 0.3s;
-  }
-
-  .social-links--circle .social-link:hover {
-    background: transparent;
-    border-color: var(--color-primary);
-  }
-
   .social-links--outline {
     gap: 10px;
   }
 
   .social-links--outline .social-link {
+    display: grid;
+    place-items: center;
+    flex: none;
+    border-radius: 50%;
     width: 42px;
     height: 42px;
     border: 1px solid #2b3137;
     color: #b8bdc1;
+    transition:
+      color 0.2s ease,
+      border-color 0.2s ease,
+      transform 0.2s ease;
+  }
+
+  .social-link :global(svg) {
+    display: block;
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
+  }
+
+  .social-links--text {
+    gap: inherit;
   }
 
   .social-links--outline .social-link:hover {
@@ -96,18 +84,13 @@ const {
     transform: translateY(-2px);
   }
 
-  .social-links--outline .social-link :global(svg) {
-    width: 18px;
-    height: 18px;
-  }
-
   .social-link:focus-visible {
     outline: 2px solid var(--color-accent);
     outline-offset: 5px;
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .social-link {
+    .social-links--outline .social-link {
       transition: none;
     }
   }

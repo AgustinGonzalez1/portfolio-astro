@@ -21,7 +21,7 @@ const photoSizes = [
       </h1>
       <p class="lead">{profile.hero.description}</p>
       <div class="actions">
-        <a class="primary" href="#projects">
+        <a class="button-primary" href="#projects">
           <span>Ver proyectos</span>
           <span aria-hidden="true">↗</span>
         </a>
@@ -135,29 +135,6 @@ const photoSizes = [
     display: flex;
     align-items: center;
     gap: 30px;
-  }
-
-  .primary {
-    min-width: 208px;
-    min-height: 54px;
-    padding: 0 22px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 16px;
-    border: 1px solid #343940;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    transition:
-      border-color 0.2s ease,
-      background-color 0.2s ease;
-  }
-
-  .primary:hover {
-    border-color: var(--color-accent);
-    background: rgba(243, 106, 34, 0.06);
   }
 
   .secondary {
@@ -334,10 +311,6 @@ const photoSizes = [
       flex-direction: column;
     }
 
-    .primary {
-      width: 100%;
-    }
-
     .visual {
       min-height: 430px;
     }
@@ -356,12 +329,6 @@ const photoSizes = [
       right: 16px;
       bottom: 16px;
       min-width: 0;
-    }
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .primary {
-      transition: none;
     }
   }
 </style>

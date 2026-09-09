@@ -9,10 +9,8 @@ import { profile } from "../data/profile";
   title={`Sobre mí | ${profile.name}`}
   description={`Conocé a ${profile.name}: desarrollador Full Stack y docente de programación. Mi formación, habilidades y tecnologías para crear aplicaciones web.`}
 >
-  <div class="mx-auto container px-4 pt-20">
-    <div transition:name="about">
-      <AboutMe />
-    </div>
+  <AboutMe />
+  <div class="mx-auto container px-4">
     <div class="w-full h-[1px] bg-[#484848] my-16 md:my-20"></div>
     <Skills />
     <div class="w-full h-[1px] bg-[#484848] my-16 md:my-20"></div>

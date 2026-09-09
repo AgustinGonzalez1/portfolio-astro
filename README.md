@@ -109,6 +109,8 @@ Los proyectos y aportes comparten `ContentSection.astro` para el encabezado y `W
 
 `AboutSummary.astro` muestra el resumen de la portada desde `profile.about.summary` y enlaza a `/about`, donde `AboutMe.astro` presenta la biografía completa. Las secciones comparten sus márgenes, tipografía base y rótulos desde `global.css`.
 
+La presentación de `/about` usa `profile.about.headline` y `profile.about.paragraphs`. `ContactHeader.astro` reúne el CV y las redes en texto; los estilos de botones y enlaces se comparten con la portada.
+
 Para actualizar las redes sociales, edita `src/data/socials.ts`: `SocialLinks.astro` las muestra en la sección del CV y el contacto.
 
 `Connect.astro` es el pie compartido de ambas páginas, con ubicación, año actualizado al compilar y enlace al correo configurado en `socials.ts`. Los iconos SVG de `src/assets/icons/` se insertan directamente en el HTML y usan el color del enlace.

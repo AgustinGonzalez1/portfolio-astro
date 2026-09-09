@@ -30,17 +30,11 @@ export const profile = {
         "Me interesa transformar problemas complejos en experiencias simples, tanto cuando desarrollo como cuando enseño programación.",
       ],
     },
-    headline: `Me dedico al desarrollo fullstack con PERN y estoy en proceso de aprender ${learningTechnology}.`,
-    background:
-      "Estudiante de la tecnicatura superior en programación en Teclab. Experiencia en desarrollo de webs dinámicas y trabajando con grupos de desarrolladores y diseñadores con metodologías ágiles. A futuro me gustaría terminar la tecnicatura y seguir mis estudios en Siglo XXI - Ing. en Software.",
-    teaching: {
-      role: "docente Front-End",
-      organization: "Play Code Latam",
-    },
-    development: {
-      role: "desarrollador Full Stack",
-      organization: "Novigo Technology",
-    },
+    headline: `Desarrollador full stack y docente. Me dedico al desarrollo con PERN y estoy profundizando en ${learningTechnology}.`,
+    paragraphs: [
+      "Estudiante de la Tecnicatura Superior en Programación en Teclab. Tengo experiencia desarrollando webs dinámicas y trabajando con equipos de desarrolladores y diseñadores mediante metodologías ágiles.",
+      "Me interesa seguir formándome y profundizar en ingeniería de software. Combino el desarrollo full stack con la docencia, buscando que tanto las soluciones como el aprendizaje sean claros y accesibles.",
+    ],
   },
   skillsDescription: `Siempre estoy aprendiendo sobre nuevas tecnologías, lenguajes y frameworks. Actualmente estoy profundizando en ${learningTechnology}`,
   contact: {
