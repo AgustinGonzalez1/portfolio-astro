@@ -15,12 +15,23 @@ Este repositorio contiene el código de mi portafolio profesional. El sitio mues
 
 ## Instalación
 
-1. Clona este repositorio.
-2. Instala las dependencias ejecutando:
+Requiere **Node.js 24.x** y npm. La versión está indicada en `.nvmrc` y `package.json`.
+
+1. Clona este repositorio y entra en su carpeta.
+2. Si usás nvm, seleccioná la versión del proyecto:
 
 ```bash
-npm install
+nvm install
+nvm use
 ```
+
+3. Instalá las dependencias según `package-lock.json`:
+
+```bash
+npm ci
+```
+
+Si no usás nvm, instalá Node.js 24.x antes de ejecutar `npm ci`. Usá también Node.js 24.x en el entorno de despliegue.
 
 ## Uso durante el desarrollo
 
@@ -75,6 +86,7 @@ portfolio-astro/
 │   ├── pages/             # Rutas del sitio
 │   ├── styles/            # Estilos globales
 │   └── types/             # Definiciones de TypeScript
+├── .nvmrc                 # Versión de Node para desarrollo
 └── astro.config.mjs       # Configuración de Astro y Tailwind
 ```
 
