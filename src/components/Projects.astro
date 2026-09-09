@@ -1,24 +1,26 @@
 ---
 import { projects } from "../data/projects";
 import type { Project } from "../types/projects";
-import WorkCard from "./WorkCard.astro";
-import WorkSection from "./WorkSection.astro";
+import WorkRow from "./WorkRow.astro";
+import ContentSection from "./ContentSection.astro";
 ---
 
-<WorkSection
+<ContentSection
   id="projects"
-  title="Proyectos destacados"
-  description="Estos son algunos de los proyectos que he creado a lo largo de mi carrera."
+  kicker="Proyectos seleccionados"
+  title="Trabajo pensado para funcionar y sentirse bien."
+  description="Algunos proyectos que resumen mi forma de trabajar: interfaces claras, estructura sólida y decisiones visuales con intención."
 >
   {
-    projects.map((project: Project) => (
-      <WorkCard
+    projects.map((project: Project, index: number) => (
+      <WorkRow
         {...project}
+        index={index + 1}
         details={[
           { label: "Año", value: project.year },
-          { label: "Rol", value: project.role },
+          { label: "Stack", value: project.stack },
         ]}
       />
     ))
   }
-</WorkSection>
+</ContentSection>

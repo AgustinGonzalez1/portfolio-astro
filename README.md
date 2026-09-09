@@ -96,14 +96,16 @@ Para actualizar el contenido, edita los archivos de `src/data/`:
 
 - `profile.ts`: nombre, logo, foto, presentación, biografía, YouTube, CV y descripción de aprendizaje.
 - `socials.ts`: LinkedIn, GitHub, Instagram y correo.
-- `projects.ts`: proyectos, con año y rol.
+- `projects.ts`: proyectos, con descripción breve, año, stack y enlace.
 - `contributions.ts`: aportes profesionales.
 - `experience.ts`: experiencia laboral.
 - `skills.ts`: lista de nombres de tecnologías.
 
-Guarda las fotos, capturas y logos en `src/assets/` e impórtalos desde los datos o componentes. Astro genera las versiones WebP durante la compilación; los originales se conservan en el repositorio. Las imágenes sin referencias no se incluyen en el sitio generado. `ProjectImage.astro` centraliza los tamaños de las capturas de proyectos y aportes.
+Guarda las fotos, capturas y logos en `src/assets/` e impórtalos desde los datos o componentes. Astro genera las versiones WebP durante la compilación; los originales se conservan en el repositorio. Las imágenes sin referencias no se incluyen en el sitio generado. `ProjectImage.astro` centraliza los tamaños de las capturas que muestran las tarjetas de aportes.
 
-`WorkCard.astro` y `WorkSection.astro` comparten la presentación de proyectos y aportes; los proyectos agregan año y rol mediante `details`. Para actualizar las redes sociales, edita `src/data/socials.ts`: `SocialLinks.astro` las muestra en la portada, la sección del CV y el contacto.
+Los proyectos usan `ContentSection.astro` para el encabezado y `WorkRow.astro` para las filas numeradas con año y stack. Los aportes mantienen por ahora `WorkSection.astro` y `WorkCard.astro` mientras se adapta su diseño.
+
+Para actualizar las redes sociales, edita `src/data/socials.ts`: `SocialLinks.astro` las muestra en la sección del CV y el contacto.
 
 La URL pública está definida en `site` dentro de `astro.config.mjs`. Cada página pasa su título y descripción a `Layout.astro`, que genera los metadatos compartidos.
 

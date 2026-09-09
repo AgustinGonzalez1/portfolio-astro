@@ -1,0 +1,210 @@
+---
+import type { WorkDetail, WorkItem } from "../types/work";
+
+interface Props extends Pick<WorkItem, "title" | "description" | "link"> {
+  index: number;
+  details: WorkDetail[];
+}
+
+const { title, description, link, index, details }: Props = Astro.props;
+---
+
+<a
+  class="work-row"
+  href={link}
+  aria-label={`Visitar ${title}`}
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <span class="work-number" aria-hidden="true"
+    >{String(index).padStart(2, "0")}</span
+  >
+  <div class="work-content">
+    <h3 class="work-title">{title}</h3>
+    <p class="work-description">{description}</p>
+  </div>
+  <dl class="work-details">
+    {
+      details.map(({ label, value }: WorkDetail) => (
+        <div>
+          <dt>{label}</dt>
+          <dd>{value}</dd>
+        </div>
+      ))
+    }
+  </dl>
+  <span class="row-arrow" aria-hidden="true">↗</span>
+</a>
+
+<style>
+  .work-row {
+    display: grid;
+    grid-template-columns: 76px minmax(0, 1fr) 220px 54px;
+    gap: 28px;
+    align-items: center;
+    min-height: 160px;
+    padding: 30px 0;
+    border-bottom: 1px solid var(--color-border);
+    transition: background-color 0.2s ease;
+  }
+
+  .work-row:hover {
+    background: rgba(255, 255, 255, 0.012);
+  }
+
+  .work-number {
+    font-family: var(--font-display);
+    color: #4d545b;
+    font-size: 29px;
+    line-height: 1;
+  }
+
+  .work-content {
+    min-width: 0;
+  }
+
+  .work-title {
+    margin-bottom: 11px;
+    font-family: var(--font-display);
+    font-size: clamp(34px, 3.3vw, 52px);
+    font-weight: 400;
+    line-height: 1.02;
+    letter-spacing: -0.028em;
+    transition: color 0.2s ease;
+  }
+
+  .work-row:hover .work-title {
+    color: white;
+  }
+
+  .work-description {
+    max-width: 700px;
+    color: #828990;
+    font-size: 13px;
+    line-height: 1.75;
+  }
+
+  .work-details {
+    display: grid;
+    gap: 12px;
+    min-width: 0;
+    color: #686f76;
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  .work-details div {
+    display: flex;
+    justify-content: space-between;
+    gap: 18px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #181c20;
+  }
+
+  .work-details dd {
+    min-width: 0;
+    color: #aeb4b9;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-align: right;
+    overflow-wrap: anywhere;
+  }
+
+  .row-arrow {
+    width: 44px;
+    height: 44px;
+    border: 1px solid #2e343a;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    color: #737a81;
+    font-size: 17px;
+    transition:
+      color 0.2s ease,
+      border-color 0.2s ease,
+      transform 0.2s ease;
+  }
+
+  .work-row:hover .row-arrow {
+    color: var(--color-accent);
+    border-color: var(--color-accent);
+    transform: translate(2px, -2px);
+  }
+
+  @media (max-width: 1150px) {
+    .work-row {
+      grid-template-columns: 58px minmax(0, 1fr) 180px 46px;
+      gap: 20px;
+    }
+  }
+
+  @media (max-width: 900px) {
+    .work-row {
+      grid-template-columns: 52px minmax(0, 1fr) 44px;
+      gap: 20px;
+    }
+
+    .work-details {
+      grid-column: 2;
+      grid-row: 2;
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .work-details div {
+      gap: 10px;
+      max-width: 100%;
+    }
+
+    .row-arrow {
+      grid-column: 3;
+      grid-row: 1;
+    }
+  }
+
+  @media (max-width: 720px) {
+    .work-row {
+      grid-template-columns: 34px minmax(0, 1fr) 36px;
+      gap: 14px;
+      min-height: 0;
+      padding: 24px 0;
+    }
+
+    .work-number {
+      font-size: 23px;
+    }
+
+    .work-title {
+      font-size: clamp(29px, 7.8vw, 38px);
+    }
+
+    .work-description {
+      font-size: 12px;
+    }
+
+    .work-details {
+      gap: 6px 15px;
+      margin-top: -6px;
+    }
+
+    .work-details dd {
+      font-size: 9px;
+    }
+
+    .row-arrow {
+      width: 36px;
+      height: 36px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .work-row,
+    .work-title,
+    .row-arrow {
+      transition: none;
+    }
+  }
+</style>

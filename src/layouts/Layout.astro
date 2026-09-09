@@ -24,7 +24,7 @@ const socialImageAlt = `Logo de ${profile.name}`;
     <meta name="description" content={description} />
     <meta name="author" content={profile.name} />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#0a0a0a" />
+    <meta name="theme-color" content="#08090a" />
     <link rel="canonical" href={canonicalURL} />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -49,13 +49,29 @@ const socialImageAlt = `Logo de ${profile.name}`;
     <meta name="twitter:image:alt" content={socialImageAlt} />
   </head>
   <body>
-    <Navbar />
-    <main>
-      <slot />
-    </main>
-    <div class="mx-auto container">
-      <Connect />
-      <div class="mt-10"></div>
+    <div class="site">
+      <Navbar />
+      <main>
+        <slot />
+      </main>
+      <div class="mx-auto container">
+        <Connect />
+        <div class="mt-10"></div>
+      </div>
     </div>
   </body>
 </html>
+
+<style>
+  .site {
+    display: flow-root;
+    min-height: 100vh;
+    background:
+      radial-gradient(
+        circle at 82% 28%,
+        rgba(255, 255, 255, 0.03),
+        transparent 20%
+      ),
+      linear-gradient(180deg, #090a0c 0%, #070809 100%);
+  }
+</style>

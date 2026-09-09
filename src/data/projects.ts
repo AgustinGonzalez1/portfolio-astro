@@ -1,44 +1,36 @@
 import type { Project } from "../types/projects";
-import react from "../assets/projects/react.jpg";
-import muebles from "../assets/projects/muebles.jpg";
-import taskMaster from "../assets/projects/taskMaster.jpg";
-import corona from "../assets/projects/corona.jpg";
 
 export const projects: Project[] = [
   {
     title: "Proyecto Final de React",
     description:
-      "Mi proyecto final en React demuestra mi pasión por este framework y mi capacidad para crear soluciones dinámicas. Creé un eCommerce completo que permite a los usuarios agregar, eliminar y comprar productos, integrando Firebase para un proceso de compra fluido con actualización en tiempo real del stock. Este proyecto me ubicó en el top 10 de mi curso y refleja mi habilidad para convertir ideas en experiencias interactivas y funcionales.",
+      "eCommerce con carrito, proceso de compra y stock actualizado en tiempo real mediante Firebase.",
     link: "https://sportify-tienda.netlify.app/",
-    img: react,
     year: 2023,
-    role: "Frontend - Backend(Firebase)",
+    stack: "React / Firebase",
   },
   {
-    title: "Proyecto top 10 React",
+    title: "Proyecto Top 10 React",
     description:
-      "Este proyecto se me otorgo gracias al top 10 en React en el curso de CoderHouse, donde ejercí el rol de desarrollador FrontEnd junto con 3 diseñadoras y una product manager, adquirí mucha experiencia nueva y lo mas valioso de formar un grupo de trabajo, aprendiendo SCRUM",
+      "Proyecto de CoderHouse desarrollado en equipo con tres diseñadoras y una product manager, aplicando Scrum.",
     link: "https://muebles-a-medida.netlify.app/",
-    img: muebles,
     year: 2023,
-    role: "Frontend",
+    stack: "React / Front-End",
   },
   {
     title: "TaskMaster",
     description:
-      "En este proyecto de práctica, desarrollé tanto el FrontEnd como el BackEnd, implementando tokens de seguridad para proteger las rutas, manejando errores para garantizar un funcionamiento adecuado y mejorando mis habilidades en las tecnologías utilizadas para adquirir más experiencia.",
+      "Aplicación de práctica full stack con autenticación mediante tokens, rutas protegidas y manejo de errores.",
     link: "https://taskmasterhub.vercel.app/",
-    img: taskMaster,
     year: 2023,
-    role: "FullStack",
+    stack: "Web App / Full Stack",
   },
   {
     title: "Corona",
     description:
-      "Gracias a este proyecto, logré entrar nuevamente al top 10 en CoderHouse. Fue una experiencia invaluable que me permitió profundizar aún más en Next.js y Firebase, además de aplicar buenas prácticas de desarrollo.",
+      "eCommerce desarrollado con Next.js y Firebase, seleccionado nuevamente entre los diez mejores proyectos de CoderHouse.",
     link: "https://corona-ecommerce.vercel.app/",
-    img: corona,
     year: 2024,
-    role: "Frontend",
+    stack: "Next.js / Firebase",
   },
 ];
