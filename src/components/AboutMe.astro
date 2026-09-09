@@ -1,13 +1,6 @@
 ---
 import ContactHeader from "./ContactHeader.astro";
 import { profile } from "../data/profile";
-
-interface Props {
-  headingTag?: "h1" | "h2";
-}
-
-const { headingTag: Heading = "h2" }: Props = Astro.props;
-const { pathname } = Astro.url;
 ---
 
 <section
@@ -15,9 +8,7 @@ const { pathname } = Astro.url;
   class="flex flex-col md:flex-row justify-between gap-4 pt-10"
 >
   <div>
-    <Heading class="text-4xl xl:text-7xl font-bebas text-white"
-      >Sobre mí</Heading
-    >
+    <h1 class="text-4xl xl:text-7xl font-bebas text-white">Sobre mí</h1>
   </div>
   <div class="flex flex-col md:max-w-[50%] gap-8">
     <div class="flex flex-col gap-4">
@@ -33,19 +24,6 @@ const { pathname } = Astro.url;
         >.
       </p>
     </div>
-    {
-      pathname === "/" ? (
-        <div>
-          <a
-            href="/about"
-            class="text-primary font-manrope text-primary-hover w-fit block"
-          >
-            Más sobre mí
-          </a>
-        </div>
-      ) : (
-        <ContactHeader />
-      )
-    }
+    <ContactHeader />
   </div>
 </section>

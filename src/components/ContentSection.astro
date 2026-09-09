@@ -24,43 +24,12 @@ const headingId = `${id}-heading`;
 </section>
 
 <style>
-  .content-section {
-    width: min(var(--container-site), calc(100% - 80px));
-    margin-inline: auto;
-    padding: 116px 0 128px;
-    border-top: 1px solid var(--color-border);
-    scroll-margin-top: 24px;
-    color: var(--color-foreground);
-    font-family: var(--font-dm-sans);
-    font-weight: 400;
-    line-height: normal;
-    -webkit-font-smoothing: antialiased;
-  }
-
   .section-heading {
     display: grid;
     grid-template-columns: minmax(0, 1fr) 400px;
     align-items: end;
     gap: 70px;
     margin-bottom: 62px;
-  }
-
-  .section-kicker {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    color: #747b82;
-    font-size: 10px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-  }
-
-  .section-kicker::before {
-    content: "";
-    width: 24px;
-    height: 1px;
-    flex: none;
-    background: var(--color-accent);
   }
 
   .section-title {
@@ -105,11 +74,6 @@ const headingId = `${id}-heading`;
   }
 
   @media (max-width: 720px) {
-    .content-section {
-      width: calc(100% - 34px);
-      padding: 80px 0 94px;
-    }
-
     .section-heading {
       margin-bottom: 44px;
     }

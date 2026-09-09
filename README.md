@@ -107,6 +107,8 @@ Los proyectos y aportes comparten `ContentSection.astro` para el encabezado y `W
 
 `Experience.astro` reutiliza `ContentSection.astro` y presenta la experiencia como una línea de tiempo adaptable, destacando los trabajos actuales.
 
+`AboutSummary.astro` muestra el resumen de la portada desde `profile.about.summary` y enlaza a `/about`, donde `AboutMe.astro` presenta la biografía completa. Las secciones comparten sus márgenes, tipografía base y rótulos desde `global.css`.
+
 Para actualizar las redes sociales, edita `src/data/socials.ts`: `SocialLinks.astro` las muestra en la sección del CV y el contacto.
 
 La URL pública está definida en `site` dentro de `astro.config.mjs`. Cada página pasa su título y descripción a `Layout.astro`, que genera los metadatos compartidos.

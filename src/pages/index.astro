@@ -2,7 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Hero from "../components/Hero.astro";
 import Projects from "../components/Projects.astro";
-import About from "../components/AboutMe.astro";
+import AboutSummary from "../components/AboutSummary.astro";
 import Experience from "../components/Experience.astro";
 import Aportes from "../components/Aportes.astro";
 import { profile } from "../data/profile";
@@ -16,11 +16,5 @@ import { profile } from "../data/profile";
   <Projects />
   <Aportes />
   <Experience />
-  <div class="mx-auto container px-4">
-    <div class="w-full h-[1px] bg-[#484848] my-16 md:my-20"></div>
-    <div transition:name="about">
-      <About />
-    </div>
-    <div class="w-full h-[1px] bg-[#484848] my-16 md:my-20"></div>
-  </div>
+  <AboutSummary />
 </Layout>

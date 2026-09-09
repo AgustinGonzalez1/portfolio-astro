@@ -22,6 +22,13 @@ export const profile = {
     availability: "Nuevos proyectos",
   },
   about: {
+    summary: {
+      title: "Desarrollo productos digitales y también enseño a construirlos.",
+      paragraphs: [
+        "Soy desarrollador Full Stack y docente. Trabajo combinando producto, interfaz y código, buscando soluciones claras y fáciles de mantener.",
+        "Me interesa transformar problemas complejos en experiencias simples, tanto cuando desarrollo como cuando enseño programación.",
+      ],
+    },
     headline: `Me dedico al desarrollo fullstack con PERN y estoy en proceso de aprender ${learningTechnology}.`,
     background:
       "Estudiante de la tecnicatura superior en programación en Teclab. Experiencia en desarrollo de webs dinámicas y trabajando con grupos de desarrolladores y diseñadores con metodologías ágiles. A futuro me gustaría terminar la tecnicatura y seguir mis estudios en Siglo XXI - Ing. en Software.",
