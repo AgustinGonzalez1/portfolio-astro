@@ -1,44 +1,39 @@
 import type { Contribution } from "../types/contributions";
-import mapbyderm from "../assets/contributions/mapbyderm.png";
-import quickNovigo from "../assets/contributions/quickNovigo.png";
-import profPlaycode from "../assets/contributions/profPlaycode.jpeg";
-import studyNovigo from "../assets/contributions/studyNovigo.png";
-import sanityAstro from "../assets/contributions/sanityAstro.png";
 
 export const contributions: Contribution[] = [
   {
-    title: "Puntos de venta - By Derm",
+    title: "Puntos de venta — By Derm",
     description:
-      "En esta contribución creé un mapa dinámico de los puntos de venta para la empresa By Derm, en el cual se puede ver cómo están distribuidos. Al alejar la vista, los puntos se agrupan entre sí; al acercarse, se separan. Además, en el lateral izquierdo hay una barra de búsqueda donde puedes introducir tu dirección y el sistema te muestra las farmacias adheridas más cercanas.",
+      "Mapa dinámico con agrupación de puntos de venta y búsqueda de farmacias adheridas cercanas.",
     link: "https://www.linkedin.com/posts/ricardoagustingonzalez_el-mes-pasado-me-encontr%C3%A9-con-un-desaf%C3%ADo-activity-7244147670066282496-H4CY?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD8QU50BytWNd4NLrZko8r75tzZatItiRF0",
-    img: mapbyderm,
+    category: "Producto / PERN",
   },
   {
-    title: "Formularios dinámicos - Frappe/Vue",
+    title: "Formularios dinámicos",
     description:
-      "Implementé en Python y JavaScript sobre el framework Frappe una función `createOrEdit` que, junto con `make_quick_entry`, genera automáticamente formularios dinámicos a partir de Doctypes predefinidos. Esto permite crear o editar entidades (pacientes, doctores) con la misma lógica reutilizable, optimizando tiempos y evitando duplicar código.",
+      "Función reutilizable para crear y editar entidades mediante formularios generados a partir de Doctypes.",
     link: "https://www.linkedin.com/posts/ricardoagustingonzalez_frappe-vue-erpnext-activity-7286115491251638272-3H5r?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD8QU50BytWNd4NLrZko8r75tzZatItiRF0",
-    img: quickNovigo,
+    category: "Frappe / Vue",
   },
   {
-    title: "Profesor en Play Code - HTML/CSS/JS",
+    title: "Profesor en Play Code",
     description:
-      "Renové mi rol como profesor en Play Code por otro año, impartiendo clases de programación y desarrollo de videojuegos, compartiendo mi experiencia con los alumnos y formando parte de un equipo de instructores de primer nivel.",
+      "Enseñanza de programación y desarrollo de videojuegos, acompañando el aprendizaje de los alumnos.",
     link: "https://www.linkedin.com/posts/ricardoagustingonzalez_programaciaejn-desarrolloweb-desarrollodevideojuegos-activity-7316153534901633025-N9K_?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD8QU50BytWNd4NLrZko8r75tzZatItiRF0",
-    img: profPlaycode,
+    category: "Docencia",
   },
   {
     title: "Vista de reporte de estudios",
     description:
-      "Desarrollé una vista de reporte de estudios con tres paneles: selección de plantillas, editor Tiptap y campos dinámicos; separé la lógica en módulos independientes y sincronizo la plantilla activa mediante emits. Esto mejora el rendimiento, maximiza la reutilización de código y permite generar reportes más rápido con un componente genérico.",
+      "Vista con plantillas, editor Tiptap y campos dinámicos, organizada en módulos reutilizables.",
     link: "https://www.linkedin.com/posts/ricardoagustingonzalez_%C3%BAltimo-vistazo-antes-de-la-nueva-interfaz-activity-7378858507015639040-OyzA?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD8QU50BytWNd4NLrZko8r75tzZatItiRF0",
-    img: studyNovigo,
+    category: "Producto / Vue",
   },
   {
-    title: "Integracion de Sanity a web de noticias - Astro",
+    title: "Integración de Sanity",
     description:
-      "Integré Sanity CMS en Grupo Gampi para gestionar contenidos dinámicos, creando schemas de autores y noticias vinculados. Implementé un sistema que permite crear noticias desde el CMS y visualizarlas automáticamente en el frontend con Astro, aprovechando las actualizaciones en tiempo real y la flexibilidad de Sanity para desarrollar portales de contenido escalables.",
+      "Integración de Sanity CMS en Grupo Gampi para administrar autores y noticias vinculados a un frontend en Astro.",
     link: "https://www.linkedin.com/posts/ricardoagustingonzalez_este-mes-en-grupo-gampi-aprend%C3%AD-a-usar-activity-7366560279058407424-CzxX?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD8QU50BytWNd4NLrZko8r75tzZatItiRF0",
-    img: sanityAstro,
+    category: "Astro / Sanity",
   },
 ];

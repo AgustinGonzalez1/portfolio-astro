@@ -1,6 +1,6 @@
 import type { WorkItem } from "./work";
 
-export type Project = Pick<WorkItem, "title" | "description" | "link"> & {
+export type Project = WorkItem & {
   year: number;
   stack: string;
 };

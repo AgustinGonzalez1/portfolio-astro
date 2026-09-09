@@ -1,16 +1,24 @@
 ---
 import type { WorkDetail, WorkItem } from "../types/work";
 
-interface Props extends Pick<WorkItem, "title" | "description" | "link"> {
+interface Props extends WorkItem {
   index: number;
-  details: WorkDetail[];
+  details?: WorkDetail[];
+  category?: string;
 }
 
-const { title, description, link, index, details }: Props = Astro.props;
+const {
+  title,
+  description,
+  link,
+  index,
+  details = [],
+  category,
+}: Props = Astro.props;
 ---
 
 <a
-  class="work-row"
+  class:list={["work-row", { "work-row--contribution": Boolean(category) }]}
   href={link}
   aria-label={`Visitar ${title}`}
   target="_blank"
@@ -23,16 +31,22 @@ const { title, description, link, index, details }: Props = Astro.props;
     <h3 class="work-title">{title}</h3>
     <p class="work-description">{description}</p>
   </div>
-  <dl class="work-details">
-    {
-      details.map(({ label, value }: WorkDetail) => (
-        <div>
-          <dt>{label}</dt>
-          <dd>{value}</dd>
-        </div>
-      ))
-    }
-  </dl>
+  {
+    category ? (
+      <span class="work-category">{category}</span>
+    ) : (
+      details.length > 0 && (
+        <dl class="work-details">
+          {details.map(({ label, value }: WorkDetail) => (
+            <div>
+              <dt>{label}</dt>
+              <dd>{value}</dd>
+            </div>
+          ))}
+        </dl>
+      )
+    )
+  }
   <span class="row-arrow" aria-hidden="true">↗</span>
 </a>
 
@@ -50,6 +64,11 @@ const { title, description, link, index, details }: Props = Astro.props;
 
   .work-row:hover {
     background: rgba(255, 255, 255, 0.012);
+  }
+
+  .work-row--contribution {
+    min-height: 132px;
+    padding: 26px 0;
   }
 
   .work-number {
@@ -75,6 +94,10 @@ const { title, description, link, index, details }: Props = Astro.props;
 
   .work-row:hover .work-title {
     color: white;
+  }
+
+  .work-row--contribution .work-title {
+    font-size: clamp(29px, 2.7vw, 40px);
   }
 
   .work-description {
@@ -112,6 +135,16 @@ const { title, description, link, index, details }: Props = Astro.props;
     overflow-wrap: anywhere;
   }
 
+  .work-category {
+    min-width: 0;
+    color: #8b9299;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    line-height: 1.6;
+    text-transform: uppercase;
+    overflow-wrap: anywhere;
+  }
+
   .row-arrow {
     width: 44px;
     height: 44px;
@@ -146,9 +179,13 @@ const { title, description, link, index, details }: Props = Astro.props;
       gap: 20px;
     }
 
-    .work-details {
+    .work-details,
+    .work-category {
       grid-column: 2;
       grid-row: 2;
+    }
+
+    .work-details {
       display: flex;
       gap: 20px;
       flex-wrap: wrap;
@@ -181,6 +218,10 @@ const { title, description, link, index, details }: Props = Astro.props;
       font-size: clamp(29px, 7.8vw, 38px);
     }
 
+    .work-row--contribution .work-title {
+      font-size: clamp(27px, 7vw, 34px);
+    }
+
     .work-description {
       font-size: 12px;
     }
@@ -191,6 +232,10 @@ const { title, description, link, index, details }: Props = Astro.props;
     }
 
     .work-details dd {
+      font-size: 9px;
+    }
+
+    .work-category {
       font-size: 9px;
     }
 

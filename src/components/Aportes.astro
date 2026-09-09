@@ -1,18 +1,19 @@
 ---
 import { contributions } from "../data/contributions";
 import type { Contribution } from "../types/contributions";
-import WorkCard from "./WorkCard.astro";
-import WorkSection from "./WorkSection.astro";
+import WorkRow from "./WorkRow.astro";
+import ContentSection from "./ContentSection.astro";
 ---
 
-<WorkSection
+<ContentSection
   id="contributions"
-  title="Mejores Aportes"
-  description="Estos son algunos de los mejores aportes que he realizado a lo largo de mi carrera profesional como full stack"
+  kicker="Aportes"
+  title="Trabajo real dentro de productos y equipos."
+  description="Contribuciones en productos, integraciones, herramientas internas y espacios de enseñanza."
 >
   {
-    contributions.map((contribution: Contribution) => (
-      <WorkCard {...contribution} />
+    contributions.map((contribution: Contribution, index: number) => (
+      <WorkRow {...contribution} index={index + 1} />
     ))
   }
-</WorkSection>
+</ContentSection>
