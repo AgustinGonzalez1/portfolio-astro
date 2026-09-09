@@ -1,7 +1,3 @@
----
-import { profile } from "../data/profile";
----
-
 <section
   id="about"
   class="content-section about-summary"
@@ -12,15 +8,18 @@ import { profile } from "../data/profile";
     <div>
       <p class="section-kicker">Sobre mí</p>
       <h2 class="about-title" id="about-heading">
-        {profile.about.summary.title}
+        Desarrollo productos digitales y también enseño a construirlos.
       </h2>
     </div>
     <div class="about-copy">
-      {
-        profile.about.summary.paragraphs.map((paragraph: string) => (
-          <p>{paragraph}</p>
-        ))
-      }
+      <p>
+        Soy desarrollador Full Stack y docente. Trabajo combinando producto,
+        interfaz y código, buscando soluciones claras y fáciles de mantener.
+      </p>
+      <p>
+        Me interesa transformar problemas complejos en experiencias simples,
+        tanto cuando desarrollo como cuando enseño programación.
+      </p>
       <a class="text-link about-link" href="/about">
         <span>Más sobre mí <span aria-hidden="true">↗</span></span>
       </a>

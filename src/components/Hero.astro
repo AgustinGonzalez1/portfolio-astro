@@ -14,12 +14,15 @@ const photoSizes = [
 <section id="home" class="hero" aria-labelledby="hero-title">
   <div class="hero-inner">
     <div class="copy">
-      <p class="kicker">{profile.hero.roles}</p>
+      <p class="kicker">Full Stack Developer · Docente</p>
       <h1 id="hero-title">
-        {profile.hero.title}<br />
-        con <em>{profile.hero.highlight}</em>
+        Diseño digital<br />
+        con <em>criterio.</em>
       </h1>
-      <p class="lead">{profile.hero.description}</p>
+      <p class="lead">
+        Desarrollo productos web claros, rápidos y bien resueltos. Menos ruido
+        visual, más intención, estructura y experiencia.
+      </p>
       <div class="actions">
         <a class="button-primary" href="#projects">
           <span>Ver proyectos</span>
@@ -30,7 +33,9 @@ const photoSizes = [
         </a>
       </div>
       <ul class="meta" aria-label="Tecnologías y ubicación">
-        {profile.hero.meta.map((item: string) => <li>{item}</li>)}
+        <li>React / Next.js</li>
+        <li>Frappe / Vue</li>
+        <li>Argentina</li>
       </ul>
     </div>
 
@@ -55,7 +60,7 @@ const photoSizes = [
               <span class="status-dot" aria-hidden="true"></span>
               <span>Disponible para</span>
             </p>
-            <strong>{profile.hero.availability}</strong>
+            <strong>Nuevos proyectos</strong>
           </div>
           <span class="status-arrow" aria-hidden="true">↗</span>
         </div>

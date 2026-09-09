@@ -1,7 +1,5 @@
 ---
 import { skillGroups } from "../data/skills";
-import { profile } from "../data/profile";
-import type { SkillGroup } from "../types/skills";
 import ContentSection from "./ContentSection.astro";
 ---
 
@@ -10,14 +8,14 @@ import ContentSection from "./ContentSection.astro";
   class="skills-section"
   kicker="Herramientas"
   title="Tecnologías que utilizo."
-  description={profile.skillsDescription}
+  description="Sigo aprendiendo y ampliando mis herramientas para resolver distintos problemas."
 >
   {
-    skillGroups.map(({ title, items }: SkillGroup) => (
+    skillGroups.map(({ title, items }) => (
       <div class="skill-row">
         <h3>{title}</h3>
         <p>
-          {items.map((skill: string, index: number) => (
+          {items.map((skill, index) => (
             <Fragment>
               {index > 0 && <span aria-hidden="true">·</span>}
               {skill}

@@ -16,7 +16,7 @@ const {
 
 <div class:list={["social-links", `social-links--${variant}`, className]}>
   {
-    networks.map((network: SocialNetwork) => {
+    networks.map((network) => {
       const { href, label, icon: Icon } = socialLinks[network];
       const isExternal = href.startsWith("https://");
 

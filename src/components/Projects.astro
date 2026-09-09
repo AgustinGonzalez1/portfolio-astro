@@ -1,6 +1,5 @@
 ---
 import { projects } from "../data/projects";
-import type { Project } from "../types/projects";
 import WorkRow from "./WorkRow.astro";
 import ContentSection from "./ContentSection.astro";
 ---
@@ -12,7 +11,7 @@ import ContentSection from "./ContentSection.astro";
   description="Algunos proyectos que resumen mi forma de trabajar: interfaces claras, estructura sólida y decisiones visuales con intención."
 >
   {
-    projects.map((project: Project, index: number) => (
+    projects.map((project, index) => (
       <WorkRow
         {...project}
         index={index + 1}

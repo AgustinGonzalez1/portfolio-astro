@@ -13,11 +13,23 @@ import { profile } from "../data/profile";
   <div class="about-grid">
     <div>
       <h1 id="about-page-title">Sobre mí<span>.</span></h1>
-      <p class="about-lead">{profile.about.headline}</p>
+      <p class="about-lead">
+        Desarrollador full stack y docente. Me dedico al desarrollo con PERN y
+        estoy profundizando en React Native.
+      </p>
       <ContactHeader />
     </div>
     <div class="about-copy">
-      {profile.about.paragraphs.map((paragraph: string) => <p>{paragraph}</p>)}
+      <p>
+        Estudiante de la Tecnicatura Superior en Programación en Teclab. Tengo
+        experiencia desarrollando webs dinámicas y trabajando con equipos de
+        desarrolladores y diseñadores mediante metodologías ágiles.
+      </p>
+      <p>
+        Me interesa seguir formándome y profundizar en ingeniería de software.
+        Combino el desarrollo full stack con la docencia, buscando que tanto las
+        soluciones como el aprendizaje sean claros y accesibles.
+      </p>
     </div>
   </div>
 </section>

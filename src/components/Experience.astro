@@ -1,6 +1,5 @@
 ---
 import { experiences } from "../data/experience";
-import type { Experience } from "../types/experience";
 import ContentSection from "./ContentSection.astro";
 ---
 
@@ -12,7 +11,7 @@ import ContentSection from "./ContentSection.astro";
 >
   <div class="timeline">
     {
-      experiences.map((experience: Experience) => (
+      experiences.map((experience) => (
         <article class:list={["exp-row", { current: !experience.endDate }]}>
           <p class="exp-date">
             {experience.startDate}

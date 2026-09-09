@@ -92,14 +92,16 @@ portfolio-astro/
 
 ## Personalización
 
-Para actualizar el contenido, edita los archivos de `src/data/`:
+Los datos personales y las colecciones se editan en `src/data/`:
 
-- `profile.ts`: nombre, ubicación, logo, foto, presentación, biografía, contacto, CV y descripción de aprendizaje.
+- `profile.ts`: nombre, ubicación, logo, foto, texto alternativo de la foto y CV.
 - `socials.ts`: LinkedIn, GitHub, Instagram, YouTube (MrCodigos) y correo.
 - `projects.ts`: proyectos, con descripción breve, año, stack y enlace.
 - `contributions.ts`: aportes profesionales, con descripción breve, categoría y enlace.
 - `experience.ts`: experiencia laboral, con rol, fechas y enfoque. Si omitís `endDate`, se muestra como trabajo actual.
 - `skills.ts`: tecnologías agrupadas en Front-end, Back-end, Datos y Herramientas.
+
+Los textos propios de cada sección se editan directamente en su componente: `Hero.astro` para la portada, `AboutSummary.astro` para el resumen personal, `AboutMe.astro` para la biografía y `Connect.astro` para el contacto. Los encabezados y las introducciones de las secciones de proyectos, aportes, experiencia y habilidades están en sus respectivos componentes.
 
 Guarda las fotos, capturas y logos en `src/assets/` e impórtalos desde los datos o componentes. Astro genera las versiones WebP durante la compilación; los originales se conservan en el repositorio. Las imágenes sin referencias no se incluyen en el sitio generado.
 
@@ -107,9 +109,9 @@ Los proyectos y aportes comparten `ContentSection.astro` para el encabezado y `W
 
 `Experience.astro` reutiliza `ContentSection.astro` y presenta la experiencia como una línea de tiempo adaptable, destacando los trabajos actuales.
 
-`AboutSummary.astro` muestra el resumen de la portada desde `profile.about.summary` y enlaza a `/about`, donde `AboutMe.astro` presenta la biografía completa. Las secciones comparten sus márgenes, tipografía base y rótulos desde `global.css`.
+`AboutSummary.astro` muestra el resumen de la portada y enlaza a `/about`, donde `AboutMe.astro` presenta la biografía completa. Las secciones comparten sus márgenes, tipografía base y rótulos desde `global.css`.
 
-La presentación de `/about` usa `profile.about.headline` y `profile.about.paragraphs`. `ContactHeader.astro` reúne el CV y las redes en texto; los estilos de botones y enlaces se comparten con la portada.
+`ContactHeader.astro` reúne el CV y las redes en texto en la presentación de `/about`; los estilos de botones y enlaces se comparten con la portada.
 
 `Skills.astro` reutiliza `ContentSection.astro` y muestra cada grupo de tecnologías como una fila, apilando el título y las herramientas en móvil.
 
