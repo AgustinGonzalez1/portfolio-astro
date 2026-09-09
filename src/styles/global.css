@@ -1,11 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;600&family=Libre+Caslon+Display&family=Manrope:wght@200..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Libre+Caslon+Display&display=swap");
 @import "tailwindcss";
 
 @theme {
-  --color-subtext: #c7c7c7;
-  --color-primary: #d3e97a;
-  --font-bebas: "Bebas Neue", sans-serif;
-  --font-manrope: "Manrope", sans-serif;
   --font-dm-sans: "DM Sans", sans-serif;
   --font-display: "Libre Caslon Display", serif;
   --color-background: #08090a;
@@ -25,20 +21,6 @@
 
   body {
     background-color: var(--color-background);
-  }
-
-  .text-primary-hover::after {
-    content: "";
-    display: block;
-    width: 0;
-    height: 1px;
-    background-color: var(--color-primary);
-    margin-top: 1px;
-    transition: width 0.2s ease-in-out;
-  }
-
-  .text-primary-hover:hover::after {
-    width: 100%;
   }
 }
 

@@ -36,7 +36,8 @@ export const profile = {
       "Me interesa seguir formándome y profundizar en ingeniería de software. Combino el desarrollo full stack con la docencia, buscando que tanto las soluciones como el aprendizaje sean claros y accesibles.",
     ],
   },
-  skillsDescription: `Siempre estoy aprendiendo sobre nuevas tecnologías, lenguajes y frameworks. Actualmente estoy profundizando en ${learningTechnology}`,
+  skillsDescription:
+    "Sigo aprendiendo y ampliando mis herramientas para resolver distintos problemas.",
   contact: {
     title: "Hablemos sobre tu próximo proyecto",
     description:

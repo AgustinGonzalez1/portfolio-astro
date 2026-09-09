@@ -4,13 +4,18 @@ interface Props {
   kicker: string;
   title: string;
   description: string;
+  class?: string;
 }
 
-const { id, kicker, title, description }: Props = Astro.props;
+const { id, kicker, title, description, class: className }: Props = Astro.props;
 const headingId = `${id}-heading`;
 ---
 
-<section class="content-section" id={id} aria-labelledby={headingId}>
+<section
+  class:list={["content-section", className]}
+  id={id}
+  aria-labelledby={headingId}
+>
   <header class="section-heading">
     <div>
       <p class="section-kicker">{kicker}</p>

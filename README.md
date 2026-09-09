@@ -9,7 +9,7 @@ Este repositorio contiene el código de mi portafolio profesional. El sitio mues
 - **Tailwind CSS** con un diseño responsivo desde el primer momento.
 - **Portada adaptable** con foto optimizada, enlaces a proyectos y presentación personal.
 - **Menú móvil** con apertura y cierre animados; se cierra al elegir un enlace o hacer clic fuera.
-- **Imágenes optimizadas con Astro**: WebP, tamaños adaptados a la pantalla y carga diferida fuera de la portada.
+- **Imágenes optimizadas con Astro**: WebP y tamaños adaptados a la pantalla.
 - Información personal, proyectos, aportes, experiencia y habilidades centralizada en `src/data` para facilitar su edición.
 - Páginas en español con títulos, descripciones, URL canónica y metadatos para compartir el portfolio.
 
@@ -99,7 +99,7 @@ Para actualizar el contenido, edita los archivos de `src/data/`:
 - `projects.ts`: proyectos, con descripción breve, año, stack y enlace.
 - `contributions.ts`: aportes profesionales, con descripción breve, categoría y enlace.
 - `experience.ts`: experiencia laboral, con rol, fechas y enfoque. Si omitís `endDate`, se muestra como trabajo actual.
-- `skills.ts`: lista de nombres de tecnologías.
+- `skills.ts`: tecnologías agrupadas en Front-end, Back-end, Datos y Herramientas.
 
 Guarda las fotos, capturas y logos en `src/assets/` e impórtalos desde los datos o componentes. Astro genera las versiones WebP durante la compilación; los originales se conservan en el repositorio. Las imágenes sin referencias no se incluyen en el sitio generado.
 
@@ -111,13 +111,15 @@ Los proyectos y aportes comparten `ContentSection.astro` para el encabezado y `W
 
 La presentación de `/about` usa `profile.about.headline` y `profile.about.paragraphs`. `ContactHeader.astro` reúne el CV y las redes en texto; los estilos de botones y enlaces se comparten con la portada.
 
+`Skills.astro` reutiliza `ContentSection.astro` y muestra cada grupo de tecnologías como una fila, apilando el título y las herramientas en móvil.
+
 Para actualizar las redes sociales, edita `src/data/socials.ts`: `SocialLinks.astro` las muestra en la sección del CV y el contacto.
 
 `Connect.astro` es el pie compartido de ambas páginas, con ubicación, año actualizado al compilar y enlace al correo configurado en `socials.ts`. Los iconos SVG de `src/assets/icons/` se insertan directamente en el HTML y usan el color del enlace.
 
 La URL pública está definida en `site` dentro de `astro.config.mjs`. Cada página pasa su título y descripción a `Layout.astro`, que genera los metadatos compartidos.
 
-Las fuentes y los colores se configuran en `src/styles/global.css`. Bebas Neue, DM Sans, Libre Caslon Display y Manrope se cargan desde una única importación de Google Fonts; Tailwind proporciona el reinicio de estilos base.
+Las fuentes y los colores se configuran en `src/styles/global.css`. DM Sans y Libre Caslon Display se cargan desde una única importación de Google Fonts; Tailwind proporciona el reinicio de estilos base.
 
 `public/logo.svg` se muestra al inicio del navbar. Sus versiones para otros usos son `favicon.svg`, `favicon.png` (32 × 32), `apple-touch-icon.png` (180 × 180) y `og-image.png` (1200 × 630). Si reemplazás el logo, actualizá también estas versiones.
 
