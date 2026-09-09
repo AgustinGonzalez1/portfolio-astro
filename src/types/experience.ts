@@ -1,6 +1,7 @@
 export type Experience = {
   title: string;
   role: string;
-  date: string;
-  logo: string;
+  startDate: string;
+  endDate?: string;
+  focus: string;
 };

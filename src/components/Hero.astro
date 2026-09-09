@@ -1,0 +1,63 @@
+---
+import { Image } from "astro:assets";
+import { profile } from "../data/profile";
+
+const currentYear = new Date().getFullYear();
+const photoRatio = profile.photo.width / profile.photo.height;
+const photoSizes = [
+  `(min-width: 1051px) ${Math.ceil(Math.max(606, 640 * photoRatio))}px`,
+  `(min-width: 721px) max(${Math.ceil(540 * photoRatio)}px, calc(100vw - 80px))`,
+  `max(${Math.ceil(430 * photoRatio)}px, calc(100vw - 34px))`,
+].join(", ");
+---
+
+<section id="home" class="hero" aria-labelledby="hero-title">
+  <div class="hero-inner">
+    <div class="copy">
+      <p class="kicker">Full Stack Developer · Docente</p>
+      <h1 id="hero-title">
+        Diseño digital<br />
+        con <em>criterio.</em>
+      </h1>
+      <p class="lead">
+        Desarrollo productos web claros, rápidos y bien resueltos. Menos ruido
+        visual, más intención, estructura y experiencia.
+      </p>
+      <div class="actions">
+        <a class="button-primary" href="#projects">
+          <span>Ver proyectos</span>
+          <span aria-hidden="true">↗</span>
+        </a>
+        <a class="secondary" href="/about">
+          Sobre mí <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="visual">
+      <span class="sideword" aria-hidden="true">Vulcanis · {currentYear}</span>
+      <div class="photo">
+        <Image
+          src={profile.photo}
+          alt={profile.photoAlt}
+          width={Math.min(profile.photo.width, 960)}
+          widths={[320, 480, 640, 960, 1280, 1536]}
+          sizes={photoSizes}
+          format="webp"
+          priority
+        />
+        <span class="index" aria-hidden="true">01</span>
+        <div class="status-badge">
+          <div class="status-copy">
+            <p class="status-row">
+              <span class="status-dot" aria-hidden="true"></span>
+              <span>Disponible para</span>
+            </p>
+            <strong>Nuevos proyectos</strong>
+          </div>
+          <span class="status-arrow" aria-hidden="true">↗</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

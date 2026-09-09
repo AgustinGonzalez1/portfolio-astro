@@ -1,43 +1,35 @@
 ---
-const { pathname } = Astro.url;
 import ContactHeader from "./ContactHeader.astro";
+import { profile } from "../data/profile";
 ---
 
-<aside id="about" class="flex flex-col md:flex-row justify-between gap-4 pt-10">
-  <div>
-    <h2 class="text-4xl xl:text-7xl font-bebas text-white">Sobre mí</h2>
-  </div>
-  <div class="flex flex-col md:max-w-[50%] gap-8">
-    <div class="flex flex-col gap-4">
-      <h4 class="text-white text-2xl font-manrope">
-        Me dedico al desarrollo fullstack con PERN y estoy en proceso de
-        aprender React Native.
-      </h4>
-      <p class="text-subtext font-manrope xl:text-lg">
-        Estudiante de la tecnicatura superior en programación en Teclab.
-        Experiencia en desarrollo de webs dinámicas y trabajando con grupos de
-        desarrolladores y diseñadores con metodologías ágiles. A futuro me
-        gustaría terminar la tecnicatura y seguir mis estudios en Siglo XXI -
-        Ing. en Software. Actualmente soy docente Front-End en <span
-          class="text-primary">Play Code Latam</span
-        > y desarrollador Full Stack en <span class="text-primary"
-          >Novigo Technology</span
-        >.
+<section
+  id="about"
+  class="about-intro"
+  aria-labelledby="about-page-title"
+  transition:name="about"
+>
+  <p class="section-kicker">Perfil / {profile.name}</p>
+  <div class="about-grid">
+    <div>
+      <h1 id="about-page-title">Sobre mí<span>.</span></h1>
+      <p class="about-lead">
+        Desarrollador full stack y docente. Me dedico al desarrollo con PERN y
+        estoy profundizando en React Native.
+      </p>
+      <ContactHeader />
+    </div>
+    <div class="about-copy">
+      <p>
+        Estudiante de la Tecnicatura Superior en Programación en Teclab. Tengo
+        experiencia desarrollando webs dinámicas y trabajando con equipos de
+        desarrolladores y diseñadores mediante metodologías ágiles.
+      </p>
+      <p>
+        Me interesa seguir formándome y profundizar en ingeniería de software.
+        Combino el desarrollo full stack con la docencia, buscando que tanto las
+        soluciones como el aprendizaje sean claros y accesibles.
       </p>
     </div>
-    {
-      pathname === "/" ? (
-        <div>
-          <a
-            href="/about"
-            class="text-primary font-manrope text-primary-hover w-fit block"
-          >
-            Más sobre mí
-          </a>
-        </div>
-      ) : (
-        <ContactHeader />
-      )
-    }
   </div>
-</aside>
+</section>

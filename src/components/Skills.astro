@@ -1,28 +1,28 @@
 ---
-import { arrSkills } from "../utils/arrSkills.ts";
-import { type Skills } from "../types/skills.ts";
+import { skillGroups } from "../data/skills";
+import ContentSection from "./ContentSection.astro";
 ---
 
-<main class="flex flex-col md:flex-row justify-between gap-4">
-  <section>
-    <h2 class="text-4xl xl:text-7xl font-bebas text-white">Mis habilidades</h2>
-  </section>
-  <section class="flex flex-col gap-8 w-full md:max-w-[50%]">
-    <p class="text-subtext font-manrope xl:text-lg">
-      Siempre estoy aprendiendo sobre nuevas tecnologías, lenguajes y
-      frameworks. Actualmente estoy profundizando en React Native <br />
-      Las tecnologías que utilizo son:
-    </p>
-    <div class="flex flex-wrap gap-4">
-      {
-        arrSkills.map((skill: Skills) => (
-          <div class="flex items-center w-fit px-6 py-3 border-[2px] border-[#484848] rounded-md">
-            <p class="text-subtext font-manrope text-sm font-bold">
-              {skill.name}
-            </p>
-          </div>
-        ))
-      }
-    </div>
-  </section>
-</main>
+<ContentSection
+  id="skills"
+  class="skills-section"
+  kicker="Herramientas"
+  title="Tecnologías que utilizo."
+  description="Sigo aprendiendo y ampliando mis herramientas para resolver distintos problemas."
+>
+  {
+    skillGroups.map(({ title, items }) => (
+      <div class="skill-row">
+        <h3>{title}</h3>
+        <p>
+          {items.map((skill, index) => (
+            <Fragment>
+              {index > 0 && <span aria-hidden="true">·</span>}
+              {skill}
+            </Fragment>
+          ))}
+        </p>
+      </div>
+    ))
+  }
+</ContentSection>

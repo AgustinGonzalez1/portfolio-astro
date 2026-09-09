@@ -1,3 +1,4 @@
-export type Skills = {
-  name: string;
+export type SkillGroup = {
+  title: string;
+  items: string[];
 };

@@ -1,8 +1,6 @@
-export type Project = {
-  title: string;
-  description: string;
-  link: string;
-  img: string;
+import type { WorkItem } from "./work";
+
+export type Project = WorkItem & {
   year: number;
-  role: string;
+  stack: string;
 };

@@ -1,30 +1,25 @@
 ---
-import { arrProjects } from "../utils/arrProjects.ts";
-import CardProject from "./CardProject.astro";
-import { type Project } from "../types/projects.ts";
+import { projects } from "../data/projects";
+import WorkRow from "./WorkRow.astro";
+import ContentSection from "./ContentSection.astro";
 ---
 
-<main class="flex flex-col gap-16 md:gap-20" id="projects">
-  <section>
-    <h2 class="text-4xl xl:text-7xl font-bebas text-white">
-      Proyectos destacados
-    </h2>
-    <p class="text-subtext font-manrope">
-      Estos son algunos de los proyectos que he creado a lo largo de mi carrera.
-    </p>
-  </section>
-  <section class="flex flex-col gap-28">
-    {
-      arrProjects.map((project: Project) => (
-        <CardProject
-          title={project.title}
-          description={project.description}
-          img={project.img}
-          link={project.link}
-          year={project.year}
-          role={project.role}
-        />
-      ))
-    }
-  </section>
-</main>
+<ContentSection
+  id="projects"
+  kicker="Proyectos seleccionados"
+  title="Trabajo pensado para funcionar y sentirse bien."
+  description="Algunos proyectos que resumen mi forma de trabajar: interfaces claras, estructura sólida y decisiones visuales con intención."
+>
+  {
+    projects.map((project, index) => (
+      <WorkRow
+        {...project}
+        index={index + 1}
+        details={[
+          { label: "Año", value: project.year },
+          { label: "Stack", value: project.stack },
+        ]}
+      />
+    ))
+  }
+</ContentSection>

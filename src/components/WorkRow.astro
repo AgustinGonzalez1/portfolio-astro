@@ -1,0 +1,51 @@
+---
+import type { WorkDetail, WorkItem } from "../types/work";
+
+interface Props extends WorkItem {
+  index: number;
+  details?: WorkDetail[];
+  category?: string;
+}
+
+const {
+  title,
+  description,
+  link,
+  index,
+  details = [],
+  category,
+}: Props = Astro.props;
+---
+
+<a
+  class:list={["work-row", { "work-row--contribution": Boolean(category) }]}
+  href={link}
+  aria-label={`Visitar ${title}`}
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <span class="work-number" aria-hidden="true"
+    >{String(index).padStart(2, "0")}</span
+  >
+  <div class="work-content">
+    <h3 class="work-title">{title}</h3>
+    <p class="work-description">{description}</p>
+  </div>
+  {
+    category ? (
+      <span class="work-category">{category}</span>
+    ) : (
+      details.length > 0 && (
+        <dl class="work-details">
+          {details.map(({ label, value }) => (
+            <div>
+              <dt>{label}</dt>
+              <dd>{value}</dd>
+            </div>
+          ))}
+        </dl>
+      )
+    )
+  }
+  <span class="row-arrow" aria-hidden="true">↗</span>
+</a>

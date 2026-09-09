@@ -1,0 +1,42 @@
+---
+import { socialLinks, type SocialNetwork } from "../data/socials";
+
+interface Props {
+  networks?: SocialNetwork[];
+  variant?: "outline" | "text";
+  class?: string;
+}
+
+const {
+  networks = ["linkedin", "github"],
+  variant = "outline",
+  class: className,
+}: Props = Astro.props;
+---
+
+<div class:list={["social-links", `social-links--${variant}`, className]}>
+  {
+    networks.map((network) => {
+      const { href, label, icon: Icon } = socialLinks[network];
+      const isExternal = href.startsWith("https://");
+
+      return (
+        <a
+          class:list={["social-link", { "text-link": variant === "text" }]}
+          href={href}
+          aria-label={label}
+          target={isExternal ? "_blank" : undefined}
+          rel={isExternal ? "noopener noreferrer" : undefined}
+        >
+          {variant === "text" ? (
+            <span>
+              {label} <span aria-hidden="true">↗</span>
+            </span>
+          ) : (
+            <Icon aria-hidden="true" focusable="false" />
+          )}
+        </a>
+      );
+    })
+  }
+</div>

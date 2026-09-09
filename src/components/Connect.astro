@@ -1,49 +1,41 @@
 ---
+import SocialLinks from "./SocialLinks.astro";
+import { profile } from "../data/profile";
+import { socialLinks } from "../data/socials";
+
 const currentYear = new Date().getFullYear();
 ---
 
-<section
-  id="contact"
-  class="flex flex-col justify-start md:justify-center gap-10 items-center"
->
-  <div class="flex flex-col gap-10">
-    <h2 class="text-4xl xl:text-7xl font-bebas text-white text-center">
-      ¡Contáctame!
-    </h2>
-    <div class="flex gap-2 justify-center">
-      <a
-        href="https://www.linkedin.com/in/ricardoagustingonzalez/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <img src="/in.svg" alt="LinkedIn" class="w-8" />
-      </a>
-      <a
-        href="https://github.com/AgustinGonzalez1"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <img src="/github.svg" alt="GitHub" class="w-8" />
-      </a>
-      <a
-        href="https://www.instagram.com/agustin.tsx/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <img src="/ig.svg" alt="Instagram" class="w-8" />
-      </a>
-      <a
-        href="mailto:agus.devvv@gmail.com"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <img src="/email.svg" alt="Email" class="w-8" />
+<footer id="contact" class="site-footer" aria-labelledby="contact-heading">
+  <div class="footer-top">
+    <div>
+      <p class="section-kicker">Contacto</p>
+      <h2 class="footer-title" id="contact-heading">
+        Hablemos sobre tu próximo proyecto<span class="accent">.</span>
+      </h2>
+    </div>
+    <div>
+      <p class="footer-copy">
+        Si tenés una idea, necesitás ayuda con un producto o querés trabajar
+        conmigo, podemos hablar y ver cómo encararlo.
+      </p>
+      <a class="footer-cta" href={socialLinks.email.href}>
+        <span>Escribime <span aria-hidden="true">↗</span></span>
       </a>
     </div>
   </div>
-  <footer>
-    <p class="text-center text-subtext font-manrope text-sm">
-      © {currentYear} Ricardo Gonzalez
-    </p>
-  </footer>
-</section>
+  <div class="footer-bottom">
+    <div class="footer-meta">
+      <span><strong>{profile.name}</strong> · Vulcanis</span>
+      <span><strong>Base</strong> {profile.location}</span>
+      <span><strong>© {currentYear}</strong> Todos los derechos reservados</span
+      >
+    </div>
+    <div class="footer-socials">
+      <SocialLinks
+        networks={["linkedin", "github", "instagram", "youtube", "email"]}
+        variant="outline"
+      />
+    </div>
+  </div>
+</footer>

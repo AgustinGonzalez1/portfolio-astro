@@ -1,6 +1,5 @@
-export type Contribution = {
-  title: string;
-  description: string;
-  link: string;
-  img: string;
+import type { WorkItem } from "./work";
+
+export type Contribution = WorkItem & {
+  category: string;
 };

@@ -1,25 +1,20 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Header from "../components/Header.jsx";
+import Hero from "../components/Hero.astro";
 import Projects from "../components/Projects.astro";
-import About from "../components/AboutMe.astro";
+import AboutSummary from "../components/AboutSummary.astro";
 import Experience from "../components/Experience.astro";
 import Aportes from "../components/Aportes.astro";
+import { profile } from "../data/profile";
 ---
 
-<Layout title="INDEX | RAG">
-  <div class="px-4">
-    <Header client:load />
-    <div class="w-full h-[1px] bg-[#484848] mb-16 md:my-20"></div>
-    <Aportes />
-    <div class="w-full h-[1px] bg-[#484848] my-16 md:my-20"></div>
-    <Projects />
-    <div class="w-full h-[1px] bg-[#484848] my-16 md:my-20"></div>
-    <div transition:name="about">
-      <About />
-    </div>
-    <div class="w-full h-[1px] bg-[#484848] my-16 md:my-20"></div>
-    <Experience />
-    <div class="w-full h-[1px] bg-[#484848] my-16 md:my-20"></div>
-  </div>
+<Layout
+  title={`${profile.name} | Desarrollador Full Stack`}
+  description={`Portfolio de ${profile.name}, desarrollador Full Stack y docente de programación. Proyectos web, aportes profesionales y experiencia con PERN, Python y Vue.`}
+>
+  <Hero />
+  <Projects />
+  <Aportes />
+  <Experience />
+  <AboutSummary />
 </Layout>

@@ -1,0 +1,29 @@
+---
+interface Props {
+  id: string;
+  kicker: string;
+  title: string;
+  description: string;
+  class?: string;
+}
+
+const { id, kicker, title, description, class: className }: Props = Astro.props;
+const headingId = `${id}-heading`;
+---
+
+<section
+  class:list={["content-section", className]}
+  id={id}
+  aria-labelledby={headingId}
+>
+  <header class="section-heading">
+    <div>
+      <p class="section-kicker">{kicker}</p>
+      <h2 class="section-title" id={headingId}>{title}</h2>
+    </div>
+    <p class="section-intro">{description}</p>
+  </header>
+  <div class="work-list">
+    <slot />
+  </div>
+</section>
