@@ -1,148 +1,272 @@
 ---
 import { profile } from "../data/profile";
-const { pathname } = Astro.url;
+
+const isHome = Astro.url.pathname === "/";
 ---
 
-<nav
-  aria-label="Navegación principal"
-  data-navigation
-  class="py-7 px-4 fixed container mx-auto w-full bg-[#0a0a0a] z-50"
->
-  <div class="flex items-center justify-between">
-    <a href="/" class="flex items-center">
-      <img
-        src={profile.logo}
-        alt=""
-        width="32"
-        height="32"
-        class="h-8 w-8 shrink-0 object-contain"
-      />
+<header class="site-header" data-navigation>
+  <div class:list={["header-inner", { "header-inner-sub": !isHome }]}>
+    <a
+      class="logo"
+      href={isHome ? "#home" : "/"}
+      aria-label={isHome ? "Vulcanis, inicio" : "Volver al inicio de Vulcanis"}
+    >
+      <img src={profile.logo} alt="" width="31" height="31" />
     </a>
 
     {
-      pathname === "/" ? (
+      isHome ? (
         <>
           <button
             type="button"
-            class="menu-toggle sm:hidden"
+            class="menu-toggle"
             aria-label="Abrir menú"
             aria-expanded="false"
             aria-controls="navigation-links"
           >
             <span aria-hidden="true" />
           </button>
-          <ul
+          <nav
             id="navigation-links"
-            class="navigation-links text-sm bg-[#0a0a0a] gap-8 flex flex-col items-center justify-center sm:flex-row w-full sm:w-fit text-subtext font-manrope absolute top-full overflow-hidden left-0 sm:static"
+            class="navigation-links"
+            aria-label="Navegación principal"
           >
-            <li>
-              <a href="#contributions">Aportes</a>
-            </li>
-            <li>
-              <a href="#projects">Proyectos</a>
-            </li>
-            <li>
-              <a href="#about">Sobre mí</a>
-            </li>
-            <li>
-              <a href="#contact">Contacto</a>
-            </li>
-          </ul>
+            <div class="navigation-panel">
+              <ul class="navigation-list">
+                <li>
+                  <a href="#home">Inicio</a>
+                </li>
+                <li>
+                  <a href="#about">Sobre mí</a>
+                </li>
+                <li>
+                  <a href="#projects">Proyectos</a>
+                </li>
+                <li>
+                  <a href="#contributions">Aportes</a>
+                </li>
+                <li>
+                  <a href="#experience">Experiencia</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+          <a class="contact-top" href="#contact">
+            Contacto <span aria-hidden="true">↗</span>
+          </a>
         </>
       ) : (
-        <a
-          href="/"
-          class="text-xl xl:text-3xl text-subtext font-bebas hover:text-primary duration-300 ease-in-out"
-        >
-          Volver
+        <a class="contact-top" href="/">
+          Volver al inicio <span aria-hidden="true">↗</span>
         </a>
       )
     }
   </div>
-</nav>
+</header>
 
 <style>
-  .navigation-links {
-    height: 0;
-    visibility: hidden;
-    transition:
-      height 0.3s ease-out,
-      visibility 0s linear 0.3s;
+  .site-header {
+    position: relative;
+    z-index: 50;
+    min-height: 84px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--color-border);
+    background: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-dm-sans);
+    font-weight: 400;
+    line-height: normal;
+    -webkit-font-smoothing: antialiased;
   }
 
-  .navigation-links a:hover {
-    color: white;
+  .header-inner {
+    width: min(var(--container-site), calc(100% - 80px));
+    margin-inline: auto;
+    display: grid;
+    grid-template-columns: 70px minmax(0, 1fr) 110px;
+    align-items: center;
   }
 
-  .menu-toggle[aria-expanded="true"] + .navigation-links {
-    height: 200px;
-    visibility: visible;
-    transition-delay: 0s;
+  .header-inner-sub {
+    grid-template-columns: 1fr auto;
+  }
+
+  .logo,
+  .logo img {
+    display: block;
+    width: 31px;
+    height: 31px;
+  }
+
+  .logo img {
+    object-fit: contain;
+  }
+
+  .navigation-list {
+    display: flex;
+    justify-content: center;
+    gap: clamp(15px, 2.2vw, 34px);
+    color: #9ca1a6;
+    font-size: 11px;
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .navigation-list a {
+    transition: color 0.2s ease;
+  }
+
+  .navigation-list a:hover {
+    color: var(--color-foreground);
+  }
+
+  .contact-top {
+    justify-self: end;
+    color: var(--color-accent);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    white-space: nowrap;
   }
 
   .menu-toggle {
-    width: 44px;
-    height: 44px;
-    position: relative;
-    cursor: pointer;
+    display: none;
   }
 
-  .menu-toggle span,
-  .menu-toggle span::before,
-  .menu-toggle span::after {
-    position: absolute;
-    width: 30px;
-    height: 3px;
-    background-color: white;
-    border-radius: 5px;
-    transition:
-      transform 0.2s ease,
-      background-color 0.2s ease;
+  @media (max-width: 900px) {
+    .header-inner {
+      min-height: 83px;
+      grid-template-columns: 1fr auto;
+      gap: 0 20px;
+    }
+
+    .navigation-links {
+      grid-column: 1 / -1;
+      grid-row: 2;
+      padding-bottom: 20px;
+    }
+
+    .navigation-list {
+      justify-content: flex-start;
+      gap: 26px;
+    }
+
+    .contact-top {
+      grid-column: 2;
+      grid-row: 1;
+    }
   }
 
-  .menu-toggle span {
-    top: calc(50% - 1.5px);
-    left: 7px;
-  }
+  @media (max-width: 720px) {
+    .header-inner {
+      width: calc(100% - 34px);
+      grid-template-columns: 1fr auto 44px;
+      gap: 16px;
+    }
 
-  .menu-toggle span::before,
-  .menu-toggle span::after {
-    content: "";
-    left: 0;
-  }
+    .header-inner-sub {
+      grid-template-columns: 1fr auto;
+    }
 
-  .menu-toggle span::before {
-    transform: translateY(-10px);
-  }
+    .navigation-links {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      display: grid;
+      grid-template-rows: 0fr;
+      padding: 0;
+      visibility: hidden;
+      background: var(--color-background);
+      transition:
+        grid-template-rows 0.3s ease-out,
+        visibility 0s linear 0.3s;
+    }
 
-  .menu-toggle span::after {
-    transform: translateY(10px);
-  }
+    .navigation-panel {
+      min-height: 0;
+      overflow: hidden;
+    }
 
-  .menu-toggle[aria-expanded="true"] span {
-    background-color: transparent;
-  }
+    .navigation-list {
+      flex-direction: column;
+      gap: 0;
+      padding: 12px 17px 24px;
+      border-bottom: 1px solid var(--color-border);
+    }
 
-  .menu-toggle[aria-expanded="true"] span::before {
-    transform: rotate(45deg);
-  }
+    .navigation-list a {
+      display: flex;
+      align-items: center;
+      min-height: 44px;
+    }
 
-  .menu-toggle[aria-expanded="true"] span::after {
-    transform: rotate(-45deg);
-  }
+    .menu-toggle {
+      position: relative;
+      display: block;
+      grid-column: 3;
+      grid-row: 1;
+      width: 44px;
+      height: 44px;
+      cursor: pointer;
+      color: var(--color-foreground);
+    }
 
-  @media (min-width: 40rem) {
-    .navigation-links,
     .menu-toggle[aria-expanded="true"] + .navigation-links {
-      height: auto;
+      grid-template-rows: 1fr;
       visibility: visible;
-      overflow: visible;
-      transition: none;
+      transition-delay: 0s;
+    }
+
+    .menu-toggle span,
+    .menu-toggle span::before,
+    .menu-toggle span::after {
+      position: absolute;
+      width: 24px;
+      height: 1px;
+      background: currentColor;
+      transition:
+        transform 0.2s ease,
+        background-color 0.2s ease;
+    }
+
+    .menu-toggle span {
+      top: calc(50% - 0.5px);
+      left: 10px;
+    }
+
+    .menu-toggle span::before,
+    .menu-toggle span::after {
+      content: "";
+      left: 0;
+    }
+
+    .menu-toggle span::before {
+      transform: translateY(-7px);
+    }
+
+    .menu-toggle span::after {
+      transform: translateY(7px);
+    }
+
+    .menu-toggle[aria-expanded="true"] span {
+      background: transparent;
+    }
+
+    .menu-toggle[aria-expanded="true"] span::before {
+      transform: rotate(45deg);
+    }
+
+    .menu-toggle[aria-expanded="true"] span::after {
+      transform: rotate(-45deg);
     }
   }
 
   @media (prefers-reduced-motion: reduce) {
     .navigation-links,
+    .navigation-list a,
     .menu-toggle span,
     .menu-toggle span::before,
     .menu-toggle span::after {
@@ -155,23 +279,27 @@ const { pathname } = Astro.url;
   document.addEventListener("astro:page-load", () => {
     const navigation = document.querySelector<HTMLElement>("[data-navigation]");
     const toggle = navigation?.querySelector<HTMLButtonElement>(".menu-toggle");
-    const links =
-      navigation?.querySelector<HTMLUListElement>("#navigation-links");
+    const links = navigation?.querySelector<HTMLElement>("#navigation-links");
 
     if (!navigation || !toggle || !links) return;
 
     const controller = new AbortController();
     const { signal } = controller;
 
-    const isOpen = () => toggle.getAttribute("aria-expanded") === "true";
     const setOpen = (open: boolean) => {
       toggle.setAttribute("aria-expanded", String(open));
       toggle.setAttribute("aria-label", open ? "Cerrar menú" : "Abrir menú");
     };
 
-    toggle.addEventListener("click", () => setOpen(!isOpen()), { signal });
+    toggle.addEventListener(
+      "click",
+      () => {
+        setOpen(toggle.getAttribute("aria-expanded") !== "true");
+      },
+      { signal },
+    );
 
-    links.addEventListener(
+    navigation.addEventListener(
       "click",
       (event) => {
         if (event.target instanceof Element && event.target.closest("a")) {

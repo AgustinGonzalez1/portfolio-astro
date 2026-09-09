@@ -48,12 +48,14 @@ const socialImageAlt = `Logo de ${profile.name}`;
     <meta name="twitter:image" content={socialImageURL} />
     <meta name="twitter:image:alt" content={socialImageAlt} />
   </head>
-  <body class="mx-auto container">
+  <body>
     <Navbar />
-    <main>
-      <slot />
-    </main>
-    <Connect />
-    <div class="mt-10"></div>
+    <div class="mx-auto container">
+      <main>
+        <slot />
+      </main>
+      <Connect />
+      <div class="mt-10"></div>
+    </div>
   </body>
 </html>
