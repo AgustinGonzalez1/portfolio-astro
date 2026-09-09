@@ -98,12 +98,14 @@ Para actualizar el contenido, edita los archivos de `src/data/`:
 - `socials.ts`: LinkedIn, GitHub, Instagram y correo.
 - `projects.ts`: proyectos, con descripción breve, año, stack y enlace.
 - `contributions.ts`: aportes profesionales, con descripción breve, categoría y enlace.
-- `experience.ts`: experiencia laboral.
+- `experience.ts`: experiencia laboral, con rol, fechas y enfoque. Si omitís `endDate`, se muestra como trabajo actual.
 - `skills.ts`: lista de nombres de tecnologías.
 
 Guarda las fotos, capturas y logos en `src/assets/` e impórtalos desde los datos o componentes. Astro genera las versiones WebP durante la compilación; los originales se conservan en el repositorio. Las imágenes sin referencias no se incluyen en el sitio generado.
 
 Los proyectos y aportes comparten `ContentSection.astro` para el encabezado y `WorkRow.astro` para las filas numeradas. Los proyectos muestran año y stack; los aportes, su categoría en una fila más compacta.
+
+`Experience.astro` reutiliza `ContentSection.astro` y presenta la experiencia como una línea de tiempo adaptable, destacando los trabajos actuales.
 
 Para actualizar las redes sociales, edita `src/data/socials.ts`: `SocialLinks.astro` las muestra en la sección del CV y el contacto.
 
