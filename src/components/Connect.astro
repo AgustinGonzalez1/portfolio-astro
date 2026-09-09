@@ -1,26 +1,155 @@
 ---
 import SocialLinks from "./SocialLinks.astro";
 import { profile } from "../data/profile";
+import { socialLinks } from "../data/socials";
+
 const currentYear = new Date().getFullYear();
 ---
 
-<section
-  id="contact"
-  class="flex flex-col justify-start md:justify-center gap-10 items-center"
->
-  <div class="flex flex-col gap-10">
-    <h2 class="text-4xl xl:text-7xl font-bebas text-white text-center">
-      ¡Contáctame!
-    </h2>
-    <SocialLinks
-      networks={["linkedin", "github", "instagram", "email"]}
-      variant="plain"
-      class="justify-center"
-    />
+<footer id="contact" class="site-footer" aria-labelledby="contact-heading">
+  <div class="footer-top">
+    <div>
+      <p class="section-kicker">Contacto</p>
+      <h2 class="footer-title" id="contact-heading">
+        {profile.contact.title}<span class="accent">.</span>
+      </h2>
+    </div>
+    <div>
+      <p class="footer-copy">{profile.contact.description}</p>
+      <a class="footer-cta" href={socialLinks.email.href}>
+        <span>Escribime <span aria-hidden="true">↗</span></span>
+      </a>
+    </div>
   </div>
-  <footer>
-    <p class="text-center text-subtext font-manrope text-sm">
-      {`© ${currentYear} ${profile.name}`}
-    </p>
-  </footer>
-</section>
+  <div class="footer-bottom">
+    <div class="footer-meta">
+      <span><strong>{profile.name}</strong> · Vulcanis</span>
+      <span><strong>Base</strong> {profile.location}</span>
+      <span><strong>© {currentYear}</strong> Todos los derechos reservados</span
+      >
+    </div>
+    <div class="footer-socials">
+      <SocialLinks
+        networks={["linkedin", "github", "instagram", "email"]}
+        variant="outline"
+      />
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    width: min(var(--container-site), calc(100% - 80px));
+    margin-inline: auto;
+    padding: 108px 0 48px;
+    border-top: 1px solid var(--color-border);
+    scroll-margin-top: 24px;
+    color: var(--color-foreground);
+    font-family: var(--font-dm-sans);
+    font-weight: 400;
+    line-height: normal;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .footer-top {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr);
+    gap: 64px;
+    align-items: end;
+    padding-bottom: 42px;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .section-kicker {
+    margin-bottom: 20px;
+  }
+
+  .footer-title {
+    max-width: 760px;
+    font-family: var(--font-display);
+    font-size: clamp(48px, 5vw, 78px);
+    font-weight: 400;
+    line-height: 0.98;
+    letter-spacing: -0.035em;
+  }
+
+  .accent {
+    color: var(--color-accent);
+  }
+
+  .footer-copy {
+    margin-bottom: 24px;
+    max-width: 420px;
+    color: #858c93;
+    font-size: 14px;
+    line-height: 1.82;
+  }
+
+  .footer-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--color-accent);
+    color: #f0ede7;
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+
+  .footer-cta:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 5px;
+  }
+
+  .footer-bottom {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 28px;
+    align-items: start;
+    padding-top: 28px;
+  }
+
+  .footer-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 28px;
+    color: #5b6269;
+    font-size: 9px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  .footer-meta strong {
+    color: #b1b6bb;
+    font-weight: 500;
+  }
+
+  @media (max-width: 900px) {
+    .footer-top,
+    .footer-bottom {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+
+  @media (max-width: 720px) {
+    .site-footer {
+      width: calc(100% - 34px);
+      padding: 82px 0 36px;
+    }
+
+    .footer-top {
+      gap: 34px;
+      padding-bottom: 30px;
+    }
+
+    .footer-bottom {
+      padding-top: 22px;
+    }
+
+    .footer-meta {
+      gap: 14px;
+      flex-direction: column;
+    }
+  }
+</style>

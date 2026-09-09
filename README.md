@@ -94,7 +94,7 @@ portfolio-astro/
 
 Para actualizar el contenido, edita los archivos de `src/data/`:
 
-- `profile.ts`: nombre, logo, foto, presentación, biografía, YouTube, CV y descripción de aprendizaje.
+- `profile.ts`: nombre, ubicación, logo, foto, presentación, biografía, contacto, YouTube, CV y descripción de aprendizaje.
 - `socials.ts`: LinkedIn, GitHub, Instagram y correo.
 - `projects.ts`: proyectos, con descripción breve, año, stack y enlace.
 - `contributions.ts`: aportes profesionales, con descripción breve, categoría y enlace.
@@ -110,6 +110,8 @@ Los proyectos y aportes comparten `ContentSection.astro` para el encabezado y `W
 `AboutSummary.astro` muestra el resumen de la portada desde `profile.about.summary` y enlaza a `/about`, donde `AboutMe.astro` presenta la biografía completa. Las secciones comparten sus márgenes, tipografía base y rótulos desde `global.css`.
 
 Para actualizar las redes sociales, edita `src/data/socials.ts`: `SocialLinks.astro` las muestra en la sección del CV y el contacto.
+
+`Connect.astro` es el pie compartido de ambas páginas, con ubicación, año actualizado al compilar y enlace al correo configurado en `socials.ts`. Los iconos SVG de `src/assets/icons/` se insertan directamente en el HTML y usan el color del enlace.
 
 La URL pública está definida en `site` dentro de `astro.config.mjs`. Cada página pasa su título y descripción a `Layout.astro`, que genera los metadatos compartidos.
 

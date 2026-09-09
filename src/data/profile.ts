@@ -4,6 +4,7 @@ const learningTechnology = "React Native";
 
 export const profile = {
   name: "Ricardo Gonzalez",
+  location: "Buenos Aires, Argentina",
   logo: "/logo.svg",
   photo,
   photoAlt: "Foto de perfil",
@@ -42,4 +43,9 @@ export const profile = {
     },
   },
   skillsDescription: `Siempre estoy aprendiendo sobre nuevas tecnologías, lenguajes y frameworks. Actualmente estoy profundizando en ${learningTechnology}`,
+  contact: {
+    title: "Hablemos sobre tu próximo proyecto",
+    description:
+      "Si tenés una idea, necesitás ayuda con un producto o querés trabajar conmigo, podemos hablar y ver cómo encararlo.",
+  },
 };

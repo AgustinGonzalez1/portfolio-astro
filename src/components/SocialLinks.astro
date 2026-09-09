@@ -3,7 +3,7 @@ import { socialLinks, type SocialNetwork } from "../data/socials";
 
 interface Props {
   networks?: SocialNetwork[];
-  variant?: "circle" | "plain";
+  variant?: "circle" | "outline";
   class?: string;
 }
 
@@ -11,32 +11,104 @@ const {
   networks = ["linkedin", "github"],
   variant = "circle",
   class: className,
-} = Astro.props;
+}: Props = Astro.props;
 ---
 
-<div class:list={["flex", variant === "circle" ? "gap-4" : "gap-2", className]}>
+<div class:list={["social-links", `social-links--${variant}`, className]}>
   {
     networks.map((network: SocialNetwork) => {
-      const { href, label, icon } = socialLinks[network];
+      const { href, label, icon: Icon } = socialLinks[network];
       const isExternal = href.startsWith("https://");
 
       return (
         <a
+          class="social-link"
           href={href}
+          aria-label={label}
           target={isExternal ? "_blank" : undefined}
           rel={isExternal ? "noopener noreferrer" : undefined}
-          class:list={{
-            "w-12 h-12 flex items-center justify-center bg-[#222222] rounded-full hover:bg-transparent border-2 border-[#222222] hover:border-primary duration-300 ease-in-out":
-              variant === "circle",
-          }}
         >
-          <img
-            src={icon}
-            alt={label}
-            class:list={{ "w-8": variant === "plain" }}
-          />
+          <Icon aria-hidden="true" focusable="false" />
         </a>
       );
     })
   }
 </div>
+
+<style>
+  .social-links {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .social-link {
+    display: grid;
+    place-items: center;
+    flex: none;
+    border-radius: 50%;
+    transition:
+      color 0.2s ease,
+      border-color 0.2s ease,
+      background-color 0.2s ease,
+      transform 0.2s ease;
+  }
+
+  .social-link :global(svg) {
+    display: block;
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
+  }
+
+  .social-links--circle {
+    gap: 16px;
+  }
+
+  .social-links--circle .social-link {
+    width: 48px;
+    height: 48px;
+    color: var(--color-primary);
+    background: #222222;
+    border: 2px solid #222222;
+    transition-duration: 0.3s;
+  }
+
+  .social-links--circle .social-link:hover {
+    background: transparent;
+    border-color: var(--color-primary);
+  }
+
+  .social-links--outline {
+    gap: 10px;
+  }
+
+  .social-links--outline .social-link {
+    width: 42px;
+    height: 42px;
+    border: 1px solid #2b3137;
+    color: #b8bdc1;
+  }
+
+  .social-links--outline .social-link:hover {
+    color: var(--color-accent);
+    border-color: #40474e;
+    transform: translateY(-2px);
+  }
+
+  .social-links--outline .social-link :global(svg) {
+    width: 18px;
+    height: 18px;
+  }
+
+  .social-link:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 5px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .social-link {
+      transition: none;
+    }
+  }
+</style>
