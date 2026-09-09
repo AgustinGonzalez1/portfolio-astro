@@ -13,10 +13,13 @@ export const profile = {
     href: "https://www.youtube.com/@MrCodigos",
   },
   hero: {
-    roles:
-      "Docente de varios cursos en CodiLab • Full Stack Developer en Novigo Technology",
+    roles: "Full Stack Developer · Docente",
+    title: "Diseño digital",
+    highlight: "criterio.",
     description:
-      "en YouTube • Apasionado por diseñar experiencias web accesibles e intuitivas.",
+      "Desarrollo productos web claros, rápidos y bien resueltos. Menos ruido visual, más intención, estructura y experiencia.",
+    meta: ["React / Next.js", "Frappe / Vue", "Argentina"],
+    availability: "Nuevos proyectos",
   },
   about: {
     headline: `Me dedico al desarrollo fullstack con PERN y estoy en proceso de aprender ${learningTechnology}.`,

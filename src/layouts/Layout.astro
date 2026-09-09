@@ -50,10 +50,10 @@ const socialImageAlt = `Logo de ${profile.name}`;
   </head>
   <body>
     <Navbar />
+    <main>
+      <slot />
+    </main>
     <div class="mx-auto container">
-      <main>
-        <slot />
-      </main>
       <Connect />
       <div class="mt-10"></div>
     </div>

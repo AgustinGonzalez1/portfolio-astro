@@ -1,82 +1,374 @@
 ---
 import { Image } from "astro:assets";
 import { profile } from "../data/profile";
-import SocialLinks from "./SocialLinks.astro";
+
+const currentYear = new Date().getFullYear();
+const photoRatio = profile.photo.width / profile.photo.height;
+const photoSizes = [
+  `(min-width: 1051px) ${Math.ceil(Math.max(606, 640 * photoRatio))}px`,
+  `(min-width: 721px) max(${Math.ceil(540 * photoRatio)}px, calc(100vw - 80px))`,
+  `max(${Math.ceil(430 * photoRatio)}px, calc(100vw - 34px))`,
+].join(", ");
 ---
 
-<header
-  id="home"
-  class="flex flex-col gap-8 md:flex-row md:gap-20 overflow-hidden h-screen justify-center items-center"
->
-  <section
-    class="flex flex-col gap-8 justify-center items-center md:items-start"
-  >
-    <div class="flex flex-col gap-3 justify-center items-center md:items-start">
-      <h1
-        class="hero-reveal text-4xl font-bebas text-white xl:text-8xl text-center md:text-left"
-      >
-        Hola, soy {profile.name}.
+<section id="home" class="hero" aria-labelledby="hero-title">
+  <div class="hero-inner">
+    <div class="copy">
+      <p class="kicker">{profile.hero.roles}</p>
+      <h1 id="hero-title">
+        {profile.hero.title}<br />
+        con <em>{profile.hero.highlight}</em>
       </h1>
-      <p
-        class="hero-reveal text-subtext font-manrope lg:text-lg w-9/12 text-center md:text-left"
-        style="--reveal-delay: 100ms"
-      >
-        {profile.hero.roles} • {" "}
-        <a
-          href={profile.youtube.href}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="text-primary hover:text-primary/50 duration-300"
-        >
-          {profile.youtube.name}
+      <p class="lead">{profile.hero.description}</p>
+      <div class="actions">
+        <a class="primary" href="#projects">
+          <span>Ver proyectos</span>
+          <span aria-hidden="true">↗</span>
         </a>
-        {" "}
-        {profile.hero.description}
-      </p>
+        <a class="secondary" href="/about">
+          Sobre mí <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+      <ul class="meta" aria-label="Tecnologías y ubicación">
+        {profile.hero.meta.map((item: string) => <li>{item}</li>)}
+      </ul>
     </div>
-    <div class="hero-reveal flex gap-4" style="--reveal-delay: 200ms">
-      <a
-        href="#contact"
-        class="font-manrope flex items-center font-bold bg-primary border-2 border-primary hover:bg-transparent hover:text-white duration-200 rounded-full p-1 px-4 gap-3 text-sm"
-      >
-        CONTACTAME
-      </a>
 
-      <SocialLinks />
+    <div class="visual">
+      <span class="sideword" aria-hidden="true"
+        >Vulcanis · Portfolio {currentYear}</span
+      >
+      <div class="photo">
+        <Image
+          src={profile.photo}
+          alt={profile.photoAlt}
+          width={Math.min(profile.photo.width, 960)}
+          widths={[320, 480, 640, 960, 1280, 1536]}
+          sizes={photoSizes}
+          format="webp"
+          priority
+        />
+        <span class="index" aria-hidden="true">01</span>
+        <div class="status-badge">
+          <div class="status-copy">
+            <p class="status-row">
+              <span class="status-dot" aria-hidden="true"></span>
+              <span>Disponible para</span>
+            </p>
+            <strong>{profile.hero.availability}</strong>
+          </div>
+          <span class="status-arrow" aria-hidden="true">↗</span>
+        </div>
+      </div>
     </div>
-  </section>
-  <section
-    class="mx-auto max-w-80 sm:max-w-[400px] md:max-w-[600px] flex justify-center items-center"
-  >
-    <Image
-      src={profile.photo}
-      alt={profile.photoAlt}
-      width={600}
-      height={600}
-      widths={[240, 300, 480, 600, 900, 1024]}
-      sizes="(min-width: 768px) 600px, (min-width: 640px) 300px, 240px"
-      format="webp"
-      fit="cover"
-      priority
-      class="hero-reveal rounded-full w-60 sm:w-[300px] md:w-[600px] h-auto object-cover border-2 border-primary aspect-square"
-      style="--reveal-delay: 300ms"
-    />
-  </section>
-</header>
+  </div>
+</section>
 
 <style>
-  @media (prefers-reduced-motion: no-preference) {
-    .hero-reveal {
-      animation: hero-fade-in 500ms ease-in-out var(--reveal-delay, 0ms) both;
+  .hero {
+    color: var(--color-foreground);
+    font-family: var(--font-dm-sans);
+    font-weight: 400;
+    line-height: normal;
+    scroll-margin-top: 0;
+    -webkit-font-smoothing: antialiased;
+    background:
+      radial-gradient(
+        circle at 82% 28%,
+        rgba(255, 255, 255, 0.03),
+        transparent 20%
+      ),
+      linear-gradient(180deg, #090a0c 0%, #070809 100%);
+  }
+
+  .hero-inner {
+    width: min(var(--container-site), calc(100% - 80px));
+    min-height: calc(100svh - 84px);
+    margin-inline: auto;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(500px, 0.88fr);
+    align-items: center;
+    gap: 72px;
+    padding: 54px 0 64px;
+  }
+
+  .copy {
+    max-width: 760px;
+    min-width: 0;
+  }
+
+  .kicker {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 28px;
+    color: #a7acb1;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+
+  .kicker::before {
+    content: "";
+    width: 26px;
+    height: 1px;
+    flex: none;
+    background: var(--color-accent);
+  }
+
+  h1 {
+    max-width: 780px;
+    font-family: var(--font-display);
+    font-size: clamp(70px, 7vw, 116px);
+    line-height: 0.94;
+    font-weight: 400;
+    letter-spacing: -0.045em;
+  }
+
+  h1 em {
+    color: var(--color-accent);
+    font-style: normal;
+  }
+
+  .lead {
+    margin: 30px 0 34px;
+    max-width: 580px;
+    color: var(--color-muted);
+    font-size: 16px;
+    line-height: 1.75;
+  }
+
+  .actions {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .primary {
+    min-width: 208px;
+    min-height: 54px;
+    padding: 0 22px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    border: 1px solid #343940;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    transition:
+      border-color 0.2s ease,
+      background-color 0.2s ease;
+  }
+
+  .primary:hover {
+    border-color: var(--color-accent);
+    background: rgba(243, 106, 34, 0.06);
+  }
+
+  .secondary {
+    padding: 10px 0 8px;
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--color-accent);
+  }
+
+  .meta {
+    margin-top: 50px;
+    display: flex;
+    gap: 30px;
+    color: #777e85;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .meta li + li::before {
+    content: "•";
+    margin-right: 30px;
+    color: var(--color-accent);
+  }
+
+  .visual {
+    position: relative;
+    min-width: 0;
+    min-height: 640px;
+  }
+
+  .photo {
+    position: absolute;
+    inset: 0 0 0 54px;
+    border: 1px solid var(--color-border);
+    overflow: hidden;
+    background: #0c0e10;
+  }
+
+  .photo :global(img) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    filter: saturate(0.72) brightness(0.84) contrast(1.04);
+  }
+
+  .photo::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(90deg, rgba(8, 9, 10, 0.22), transparent 28%),
+      linear-gradient(180deg, transparent 60%, rgba(8, 9, 10, 0.28));
+    pointer-events: none;
+  }
+
+  .sideword {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translate(-40%, -50%) rotate(-90deg);
+    color: #545a60;
+    font-size: 10px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .index {
+    position: absolute;
+    right: 18px;
+    top: 16px;
+    font-family: var(--font-display);
+    font-size: 22px;
+    color: #5a6066;
+    z-index: 2;
+  }
+
+  .status-badge {
+    position: absolute;
+    left: 24px;
+    bottom: 24px;
+    z-index: 3;
+    min-width: 220px;
+    padding: 16px 18px;
+    border: 1px solid var(--color-border-strong);
+    background: rgba(9, 10, 12, 0.84);
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+  }
+
+  .status-copy {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .status-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #cfd3d7;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+
+  .status-dot {
+    width: 6px;
+    height: 6px;
+    flex: none;
+    border-radius: 50%;
+    background: var(--color-accent);
+  }
+
+  .status-copy strong {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #f0ede7;
+  }
+
+  .status-arrow {
+    color: var(--color-accent);
+    font-size: 18px;
+    line-height: 1;
+  }
+
+  @media (max-width: 1050px) {
+    .hero-inner {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 46px;
+    }
+
+    .visual {
+      min-height: 540px;
+    }
+
+    .photo {
+      left: 0;
+    }
+
+    .sideword {
+      display: none;
     }
   }
 
-  @keyframes hero-fade-in {
-    from {
-      opacity: 0;
+  @media (max-width: 900px) {
+    .hero-inner {
+      min-height: 0;
+      padding: 74px 0 100px;
     }
-    to {
-      opacity: 1;
+  }
+
+  @media (max-width: 720px) {
+    .hero-inner {
+      width: calc(100% - 34px);
+      padding-bottom: 86px;
+    }
+
+    h1 {
+      font-size: 58px;
+    }
+
+    .actions {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+
+    .primary {
+      width: 100%;
+    }
+
+    .visual {
+      min-height: 430px;
+    }
+
+    .meta {
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .meta li + li::before {
+      margin-right: 14px;
+    }
+
+    .status-badge {
+      left: 16px;
+      right: 16px;
+      bottom: 16px;
+      min-width: 0;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .primary {
+      transition: none;
     }
   }
 </style>

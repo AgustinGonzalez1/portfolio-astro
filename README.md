@@ -7,7 +7,7 @@ Este repositorio contiene el código de mi portafolio profesional. El sitio mues
 - **Astro 7** para generar páginas estáticas con JavaScript solo donde hace falta.
 - **TypeScript** para un código más seguro y mantenible.
 - **Tailwind CSS** con un diseño responsivo desde el primer momento.
-- **Animaciones CSS** en la portada, respetando la preferencia de movimiento reducido.
+- **Portada adaptable** con foto optimizada, enlaces a proyectos y presentación personal.
 - **Menú móvil** con apertura y cierre animados; se cierra al elegir un enlace o hacer clic fuera.
 - **Imágenes optimizadas con Astro**: WebP, tamaños adaptados a la pantalla y carga diferida fuera de la portada.
 - Información personal, proyectos, aportes, experiencia y habilidades centralizada en `src/data` para facilitar su edición.
@@ -107,7 +107,7 @@ Guarda las fotos, capturas y logos en `src/assets/` e impórtalos desde los dato
 
 La URL pública está definida en `site` dentro de `astro.config.mjs`. Cada página pasa su título y descripción a `Layout.astro`, que genera los metadatos compartidos.
 
-Las fuentes y los colores se configuran en `src/styles/global.css`. Bebas Neue y Manrope se cargan desde una única importación de Google Fonts; Tailwind proporciona el reinicio de estilos base.
+Las fuentes y los colores se configuran en `src/styles/global.css`. Bebas Neue, DM Sans, Libre Caslon Display y Manrope se cargan desde una única importación de Google Fonts; Tailwind proporciona el reinicio de estilos base.
 
 `public/logo.svg` se muestra al inicio del navbar. Sus versiones para otros usos son `favicon.svg`, `favicon.png` (32 × 32), `apple-touch-icon.png` (180 × 180) y `og-image.png` (1200 × 630). Si reemplazás el logo, actualizá también estas versiones.
 
