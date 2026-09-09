@@ -9,10 +9,6 @@ export const profile = {
   photo,
   photoAlt: "Foto de perfil",
   cvUrl: "/ricardo-agustin-gonzalez-cv.pdf",
-  youtube: {
-    name: "MrCodigos",
-    href: "https://www.youtube.com/@MrCodigos",
-  },
   hero: {
     roles: "Full Stack Developer · Docente",
     title: "Diseño digital",

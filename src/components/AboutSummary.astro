@@ -4,7 +4,7 @@ import { profile } from "../data/profile";
 
 <section
   id="about"
-  class="content-section"
+  class="content-section about-summary"
   aria-labelledby="about-heading"
   transition:name="about"
 >
@@ -27,65 +27,3 @@ import { profile } from "../data/profile";
     </div>
   </div>
 </section>
-
-<style>
-  .about-grid {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) 390px;
-    gap: 70px;
-    align-items: start;
-  }
-
-  .about-title {
-    margin-top: 18px;
-    max-width: 760px;
-    font-family: var(--font-display);
-    font-size: clamp(46px, 4.6vw, 72px);
-    line-height: 1.02;
-    font-weight: 400;
-    letter-spacing: -0.035em;
-  }
-
-  .about-copy {
-    padding-top: 34px;
-  }
-
-  .about-copy p {
-    color: #8a9197;
-    font-size: 14px;
-    line-height: 1.85;
-  }
-
-  .about-copy p + p {
-    margin-top: 18px;
-  }
-
-  .about-link {
-    margin-top: 23px;
-  }
-
-  @media (max-width: 1150px) {
-    .about-grid {
-      grid-template-columns: minmax(0, 1fr) 340px;
-      gap: 44px;
-    }
-  }
-
-  @media (max-width: 900px) {
-    .about-grid {
-      grid-template-columns: minmax(0, 1fr);
-      gap: 34px;
-    }
-
-    .about-copy {
-      max-width: 620px;
-      padding-top: 0;
-    }
-  }
-
-  @media (max-width: 720px) {
-    .about-title {
-      font-size: 42px;
-    }
-  }
-</style>
