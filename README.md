@@ -10,7 +10,8 @@ Este repositorio contiene el código de mi portafolio profesional. El sitio mues
 - **Lucide para Astro** para los iconos SVG de la interfaz.
 - **Portada adaptable** con foto optimizada, enlaces a proyectos y presentación personal.
 - **Menú móvil** con apertura y cierre animados; se cierra al elegir un enlace o hacer clic fuera.
-- **Imágenes optimizadas con Astro**: WebP y tamaños adaptados a la pantalla.
+- **Imágenes optimizadas con Astro**: AVIF con alternativa WebP y tamaños adaptados a la pantalla.
+- **Fuentes servidas desde el sitio** y precargadas para acelerar el primer renderizado.
 - Información personal, proyectos, aportes, experiencia y habilidades centralizada en `src/data` para facilitar su edición.
 - Páginas en español con títulos, descripciones, URL canónica y metadatos para compartir el portfolio.
 
@@ -104,7 +105,7 @@ Los datos personales y las colecciones se editan en `src/data/`:
 
 Los textos propios de cada sección se editan directamente en su componente: `Hero.astro` para la portada, `AboutSummary.astro` para el resumen personal, `AboutMe.astro` para la biografía y `Connect.astro` para el contacto. Los encabezados y las introducciones de las secciones de proyectos, aportes, experiencia y habilidades están en sus respectivos componentes.
 
-Guarda las fotos, capturas y logos en `src/assets/` e impórtalos desde los datos o componentes. Astro genera las versiones WebP durante la compilación; los originales se conservan en el repositorio. Las imágenes sin referencias no se incluyen en el sitio generado.
+Guarda las fotos, capturas y logos en `src/assets/` e impórtalos desde los datos o componentes. La foto del hero usa `Picture` para generar AVIF y WebP durante la compilación. Los tamaños consideran el encuadre de la foto con `object-fit: cover`, conservando nitidez en pantallas de mayor densidad. Los originales se conservan en el repositorio y las imágenes sin referencias no se incluyen en el sitio generado.
 
 Los proyectos y aportes comparten `ContentSection.astro` para el encabezado y `WorkRow.astro` para las filas numeradas. Los proyectos muestran año y stack; los aportes, su categoría en una fila más compacta.
 
@@ -124,7 +125,9 @@ Las flechas de la interfaz usan `ArrowUpRight` de `@lucide/astro`. Para agregar 
 
 La URL pública está definida en `site` dentro de `astro.config.mjs`. Cada página pasa su título y descripción a `Layout.astro`, que genera los metadatos compartidos.
 
-Todos los estilos están en `src/styles/global.css`, importado una vez desde `Layout.astro`. El archivo está organizado en estilos base, reglas compartidas, secciones y ajustes por tamaño de pantalla. La tipografía y los contenedores se definen una sola vez; los selectores de cada sección evitan que sus estilos afecten a otras. DM Sans y Libre Caslon Display se cargan desde una única importación de Google Fonts; Tailwind proporciona el reinicio de estilos base.
+Todos los estilos están en `src/styles/global.css`, importado una vez desde `Layout.astro`. El archivo está organizado en estilos base, reglas compartidas, secciones y ajustes por tamaño de pantalla. La tipografía y los contenedores se definen una sola vez; los selectores de cada sección evitan que sus estilos afecten a otras. Tailwind proporciona el reinicio de estilos base. Al compilar, Astro inserta el CSS en el HTML mediante `build.inlineStylesheets`, evitando una solicitud que bloquee el renderizado.
+
+DM Sans y Libre Caslon Display se configuran con la API de fuentes de Astro en `astro.config.mjs`. Astro las descarga de Google durante el desarrollo o la compilación y las guarda en caché; el primer uso requiere conexión. El navegador recibe los archivos WOFF2 desde el propio sitio, con precargas generadas por `Font` en `Layout.astro`, `font-display: swap` y fuentes de respaldo ajustadas para reducir cambios de diseño.
 
 `public/logo.svg` se muestra al inicio del navbar. Sus versiones para otros usos son `favicon.svg`, `favicon.png` (32 × 32), `apple-touch-icon.png` (180 × 180) y `og-image.png` (1200 × 630). Si reemplazás el logo, actualizá también estas versiones.
 

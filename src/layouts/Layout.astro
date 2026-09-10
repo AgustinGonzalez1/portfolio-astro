@@ -1,4 +1,5 @@
 ---
+import { Font } from "astro:assets";
 import { ClientRouter } from "astro:transitions";
 import Navbar from "../components/Navbar.astro";
 import Connect from "../components/Connect.astro";
@@ -24,6 +25,8 @@ const socialImageAlt = `Logo de ${profile.name}`;
     <meta name="description" content={description} />
     <meta name="author" content={profile.name} />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <Font cssVariable="--font-body" preload={[{ weight: 400 }]} />
+    <Font cssVariable="--font-heading" preload />
     <meta name="theme-color" content="#08090a" />
     <link rel="canonical" href={canonicalURL} />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
