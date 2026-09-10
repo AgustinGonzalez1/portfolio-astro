@@ -1,5 +1,5 @@
 ---
-import { Image } from "astro:assets";
+import { Picture } from "astro:assets";
 import { ArrowUpRight } from "@lucide/astro";
 import { profile } from "../data/profile";
 
@@ -39,13 +39,14 @@ const photoSizes = [
     <div class="visual">
       <span class="sideword" aria-hidden="true">Vulcanis · {currentYear}</span>
       <div class="photo">
-        <Image
+        <Picture
           src={profile.photo}
           alt={profile.photoAlt}
           width={Math.min(profile.photo.width, 960)}
-          widths={[320, 480, 640, 960, 1280, 1536]}
+          widths={[320, 480, 640, 768, 960, 1152, 1280, 1536]}
           sizes={photoSizes}
-          format="webp"
+          formats={["avif"]}
+          fallbackFormat="webp"
           priority
         />
         <span class="index" aria-hidden="true">01</span>

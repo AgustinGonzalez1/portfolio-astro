@@ -1,9 +1,8 @@
-@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Libre+Caslon+Display&display=swap");
 @import "tailwindcss";
 
 @theme {
-  --font-dm-sans: "DM Sans", sans-serif;
-  --font-display: "Libre Caslon Display", serif;
+  --font-dm-sans: var(--font-body);
+  --font-display: var(--font-heading);
   --color-background: #08090a;
   --color-foreground: #f2f0ec;
   --color-muted: #9da2a8;
