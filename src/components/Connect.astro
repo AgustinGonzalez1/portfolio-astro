@@ -1,4 +1,5 @@
 ---
+import { ArrowUpRight } from "@lucide/astro";
 import SocialLinks from "./SocialLinks.astro";
 import { profile } from "../data/profile";
 import { socialLinks } from "../data/socials";
@@ -20,7 +21,8 @@ const currentYear = new Date().getFullYear();
         conmigo, podemos hablar y ver cómo encararlo.
       </p>
       <a class="footer-cta" href={socialLinks.email.href}>
-        <span>Escribime <span aria-hidden="true">↗</span></span>
+        <span>Escribime</span>
+        <ArrowUpRight class="icon-arrow" />
       </a>
     </div>
   </div>

@@ -1,4 +1,5 @@
 ---
+import { ArrowUpRight } from "@lucide/astro";
 import { profile } from "../data/profile";
 
 const isHome = Astro.url.pathname === "/";
@@ -52,12 +53,14 @@ const isHome = Astro.url.pathname === "/";
             </div>
           </nav>
           <a class="contact-top" href="#contact">
-            Contacto <span aria-hidden="true">↗</span>
+            <span>Contacto</span>
+            <ArrowUpRight class="icon-arrow" />
           </a>
         </>
       ) : (
         <a class="contact-top" href="/">
-          Volver al inicio <span aria-hidden="true">↗</span>
+          <span>Volver al inicio</span>
+          <ArrowUpRight class="icon-arrow" />
         </a>
       )
     }

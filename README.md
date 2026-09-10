@@ -7,6 +7,7 @@ Este repositorio contiene el código de mi portafolio profesional. El sitio mues
 - **Astro 7** para generar páginas estáticas con JavaScript solo donde hace falta.
 - **TypeScript** para un código más seguro y mantenible.
 - **Tailwind CSS** con un diseño responsivo desde el primer momento.
+- **Lucide para Astro** para los iconos SVG de la interfaz.
 - **Portada adaptable** con foto optimizada, enlaces a proyectos y presentación personal.
 - **Menú móvil** con apertura y cierre animados; se cierra al elegir un enlace o hacer clic fuera.
 - **Imágenes optimizadas con Astro**: WebP y tamaños adaptados a la pantalla.
@@ -118,6 +119,8 @@ Los proyectos y aportes comparten `ContentSection.astro` para el encabezado y `W
 Para actualizar las redes sociales, edita `src/data/socials.ts`: `SocialLinks.astro` las muestra en la sección del CV y el contacto.
 
 `Connect.astro` es el pie compartido de ambas páginas, con ubicación, año actualizado al compilar, redes (incluido el canal de YouTube) y enlace al correo configurado en `socials.ts`. Los iconos SVG de `src/assets/icons/` se insertan directamente en el HTML y usan el color del enlace.
+
+Las flechas de la interfaz usan `ArrowUpRight` de `@lucide/astro`. Para agregar otro icono, importalo desde esa misma librería y usalo como componente Astro; solo se incluyen los iconos utilizados, como SVG estáticos. Los tamaños y la alineación de las flechas se comparten desde `.icon-arrow` en `global.css`. Los logos de redes sociales se mantienen en `src/assets/icons/`.
 
 La URL pública está definida en `site` dentro de `astro.config.mjs`. Cada página pasa su título y descripción a `Layout.astro`, que genera los metadatos compartidos.
 

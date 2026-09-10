@@ -1,5 +1,6 @@
 ---
 import { Image } from "astro:assets";
+import { ArrowUpRight } from "@lucide/astro";
 import { profile } from "../data/profile";
 
 const currentYear = new Date().getFullYear();
@@ -16,7 +17,7 @@ const photoSizes = [
     <div class="copy">
       <p class="kicker">Full Stack Developer · Docente</p>
       <h1 id="hero-title">
-        Diseño digital<br />
+        Desarrollo<br />
         con <em>criterio.</em>
       </h1>
       <p class="lead">
@@ -26,10 +27,11 @@ const photoSizes = [
       <div class="actions">
         <a class="button-primary" href="#projects">
           <span>Ver proyectos</span>
-          <span aria-hidden="true">↗</span>
+          <ArrowUpRight class="icon-arrow" />
         </a>
         <a class="secondary" href="/about">
-          Sobre mí <span aria-hidden="true">↗</span>
+          <span>Sobre mí</span>
+          <ArrowUpRight class="icon-arrow" />
         </a>
       </div>
     </div>
@@ -55,7 +57,7 @@ const photoSizes = [
             </p>
             <strong>Nuevos proyectos</strong>
           </div>
-          <span class="status-arrow" aria-hidden="true">↗</span>
+          <ArrowUpRight class="icon-arrow status-arrow" />
         </div>
       </div>
     </div>
