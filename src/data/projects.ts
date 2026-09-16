@@ -33,4 +33,20 @@ export const projects: Project[] = [
     year: 2024,
     stack: "Next.js / Firebase",
   },
+  {
+    title: "Sembrando No Me Olvides",
+    description:
+      "Landing page para asociación sin fines de lucro, trabajando en conjunto con diseñadora UX/UI",
+    link: "https://sembrandonomeolvides.com.ar",
+    year: 2024,
+    stack: "Next.js",
+  },
+  {
+    title: "Prodont",
+    description:
+      "Landing page para consultorio odontológico, trabajando en conjunto con diseñadora UX/UI",
+    link: "https://prodont.com.ar",
+    year: 2026,
+    stack: "Astro",
+  },
 ];
