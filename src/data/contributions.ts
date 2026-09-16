@@ -36,4 +36,18 @@ export const contributions: Contribution[] = [
     link: "https://www.linkedin.com/posts/ricardoagustingonzalez_este-mes-en-grupo-gampi-aprend%C3%AD-a-usar-activity-7366560279058407424-CzxX?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD8QU50BytWNd4NLrZko8r75tzZatItiRF0",
     category: "Astro / Sanity",
   },
+  {
+    title: "Scraping + Evolution API",
+    description:
+      "Creé un bot que hace scraping de LinkedIn para buscar publicaciones de interés, integrado con Evolution API para enviar mensajes de WhatsApp con estas publicaciones.",
+    link: "https://www.linkedin.com/posts/ricardoagustingonzalez_sigo-mejorando-a%C3%BAn-m%C3%A1s-mi-botautomatizaci%C3%B3n-activity-7470157652858339328-FlXX?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAD8QU50BytWNd4NLrZko8r75tzZatItiRF0",
+    category: "Puppeteer / JavaScript / Evolution API / Docker",
+  },
+  {
+    title: "Selling + Purchasing + Stock Movement",
+    description:
+      "Creé estas tres herramientas para poder agilizar el proceso de movimiento y creación de facturas en un ERP con Vue y Python.",
+    link: "https://www.linkedin.com/posts/ricardoagustingonzalez_tool-activity-7505982368319594498-dnoR?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD8QU50BytWNd4NLrZko8r75tzZatItiRF0",
+    category: "Vue.js / Python",
+  },
 ];
