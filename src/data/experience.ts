@@ -8,17 +8,17 @@ export const experiences: Experience[] = [
     focus: "Producto · Front-End · Back-End",
   },
   {
+    title: "CodiLab",
+    role: "Docente · Desarrollo Web · Scratch · Python · Roblox Studio",
+    startDate: "Feb 2026",
+    focus: "Docencia · Programación",
+  },
+  {
     title: "Mintec",
     role: "Full Stack Developer Freelance · Node.js · React.js",
     startDate: "Nov 2025",
     endDate: "Mar 2026",
     focus: "Producto · Front-End · CSM",
-  },
-  {
-    title: "CodiLab",
-    role: "Docente · Desarrollo Web · Scratch · Python · Roblox Studio",
-    startDate: "Feb 2026",
-    focus: "Docencia · Programación",
   },
   {
     title: "Grupo Gampi",
